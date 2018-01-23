@@ -1,0 +1,81 @@
+[ 2017-11-07T13:43:10+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002139s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002489s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.002114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008522s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_task` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `xxgc_process` [ RunTime:0.0169s ]
+
+[ 2017-11-07T13:43:10+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002250s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002019s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006289s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_task` [ RunTime:0.0308s ]
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0192s ]
+SQL: SHOW COLUMNS FROM `xxgc_process` [ RunTime:0.0206s ]
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 100 行.
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 101 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_task` WHERE `t_status` = 1 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT `t_id`,`t_title`,from_unixtime(t_create_time,"%Y-%m-%d") as create_time,`t_stage_id` FROM `xxgc_task` WHERE `t_status` = 1 ORDER BY t_create_time desc LIMIT 0,10   [ RunTime:0.0023s ]
+
+[ 2017-11-07T13:43:13+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001984s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.005293s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010447s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+
+[ 2017-11-07T13:43:13+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002438s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.007488s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012553s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_task` [ RunTime:0.0127s ]
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `xxgc_process` [ RunTime:0.0117s ]
+
+[ 2017-11-07T13:43:13+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001165s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003133s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0172s ]
+SQL: SELECT `a_id`,`a_name` FROM `xxgc_account` WHERE `a_type` = 1 AND `status` = 1  [ RunTime:0.0015s ]
+
+[ 2017-11-07T13:43:23+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001441s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001839s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.001854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006288s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_task` [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `xxgc_process` [ RunTime:0.0152s ]
+
+[ 2017-11-07T13:43:23+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002076s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.001120s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005087s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_task` [ RunTime:0.0200s ]
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0207s ]
+SQL: SHOW COLUMNS FROM `xxgc_process` [ RunTime:0.0143s ]
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 100 行.
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 101 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_task` WHERE `t_status` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `t_id`,`t_title`,from_unixtime(t_create_time,"%Y-%m-%d") as create_time,`t_stage_id` FROM `xxgc_task` WHERE `t_status` = 1 ORDER BY t_create_time desc LIMIT 0,10   [ RunTime:0.0003s ]
+

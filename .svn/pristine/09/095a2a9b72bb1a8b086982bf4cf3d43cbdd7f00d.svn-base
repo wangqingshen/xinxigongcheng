@@ -1,0 +1,201 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Task/task_list')}">任务列表</a></li>
+			<li class="active"><a href="{:U('Task/add_task')}">新建任务</a></li>
+		</ul>
+		<form id="task_form" method="post" class="form-horizontal js-ajax-form" action="{:U('Task/add_task_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">任务标题：</label>
+					<div class="controls">
+						<input type="text" name="task_title" id="task_title" value="">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">任务描述：</label>
+					<div class="controls">
+						<textarea id="task_content" name="task_content"></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">上传图片：</label>
+					<div class="controls">
+						<input type="hidden" name="task_img" id="thumb-4" value="">
+						<a href="javascript:upload_one_image('图片上传','#thumb-4',300,'goods');">
+							<img src="__TMPL__Public/assets/images/default-thumbnail.png" id="thumb-4-preview" style="cursor: hand;width: 120px;height: 120px" />
+						</a>
+						<input type="button" class="btn btn-small" onclick="$('#thumb-4-preview').attr('src','__TMPL__Public/assets/images/default-thumbnail.png');$('#thumb-4').val('');return false;" value="取消图片">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">任务类型：</label>
+					<div class="controls">
+						<select name="select_task_type" id="select_task_type">
+							<option value="">请选择</option>
+							<volist name="task_type" id="type">
+							<option value="{$key}">{$type}</option>
+							</volist>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">任务设置：</label>
+					<div class="controls">
+						<input type="button" name="add_stage" id="add_stage" value="添加阶段"/>
+					</div>
+				</div>
+				<div class="control-group" id="div_stage"></div>
+
+			</fieldset>
+			<div class="form-actions">
+				<button id="btn_submit" type="submit" class="btn btn-primary js-ajax-submit">发布任务</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/validate.js"></script>
+<script>
+	function get_accout_html(event) {
+        var data = "account_type="+event.value;
+        var url = "{:U('Account/get_account_by_type')}";
+        $.ajax({
+            url:url,
+            data:data,
+            success:function(data){
+                if(data.errcode == 1){
+                    var option_account_html = '';
+                    $.each(data.data,function (k,v) {
+                        option_account_html += "<option value='"+v.a_id+"'>";
+                        option_account_html += v.a_name;
+                        option_account_html += "</option>";
+                    });
+                    $(event).next("select[name='select_account[]']").html(option_account_html);
+                }else{
+                    alert('获取账户信息失败');
+                    return;
+                }
+            }
+        });
+	}
+	function del_stage(event) {
+		$(event).parent().remove()
+	}
+	$(function () {
+		var g_stage = $.parseJSON('{$stage}'),
+			g_account_type = $.parseJSON('{$account_type}');
+
+		$('#task_form').validate({
+			rules:{
+                task_title:{
+				    required:true,
+					maxlength:50
+				},
+                task_content:{
+				    required:true,
+					maxlength:500,
+				},
+				select_task_type:{
+				    required:true
+				}
+			},
+			messages:{
+                task_title:{
+			        required:"<span style='color: red'>任务标题不能为空</span>",
+					maxlength:"<span style='color: red'>任务标题不能超过20个汉字</span>"
+				},
+				task_content:{
+			        required:"<span style='color: red'>任务内容不能为空</span>",
+                    maxlength:"<span style='color: red'>任务内容不能超过500字</span>",
+				},
+				select_task_type:{
+			        required:"<span style='color: red'>请选择任务类型</span>"
+				}
+			}
+		});
+		$('#add_stage').click(function () {
+			//流程设置
+			var stage_html = "<select name='select_stage[]'>";
+			$i = 0;
+			$.each(g_stage,function (k,v) {
+				stage_html +="<option value='"+k+"'>"+v+"</option>";
+				$i++;
+			});
+			stage_html += "</select>";
+            //设置流程数不得
+            var stage_len = $('#div_stage').children('div').length;
+            if($i == stage_len){
+                alert('添加流程不得大于已有流程数');
+                return false;
+			}
+			//账户类型设置
+			var account_type_html = "<select name='select_account_type[]' id='select_account_type' onchange='get_accout_html(this)'>";
+			$.each(g_account_type,function (k,v) {
+				account_type_html +="<option value='"+k+"'>"+v+"</option>"
+			});
+			account_type_html += "</select>";
+			//账户设置
+			var account_html = "<select name='select_account[]'>";
+			/*初始化账户*/
+            var data = "account_type="+1;
+            var url = "{:U('Account/get_account_by_type')}";
+            var option_account_html = '';
+            $.ajax({
+                url:url,
+                data:data,
+                async:false,
+                success:function(data){
+                    if(data.errcode == 1){
+                        $.each(data.data,function (k,v) {
+                            option_account_html += "<option value='"+v.a_id+"'>";
+                            option_account_html += v.a_name;
+                            option_account_html += "</option>";
+                        });
+                    }else{
+                        alert('获取账户信息失败');
+                        return;
+                    }
+                }
+            });
+            account_html += option_account_html;
+			account_html += "</select>";
+			//组合
+			var html = "<div name='select_div' style='width: 100%;margin-bottom: 10px;'>"+
+					stage_html+"&nbsp;&nbsp;&nbsp;&nbsp;"+account_type_html+"&nbsp;&nbsp;&nbsp;&nbsp;"+account_html+
+					"&nbsp;&nbsp;&nbsp;&nbsp;"+"<input type='button' onclick='del_stage(this)' value='删除'/>" +
+					"</div>" ;
+			$('#div_stage').append(html);
+		});
+		
+		$('#task_form').submit(function () {
+		    //判断阶段是否重复
+			var hash = [];
+			var flag = true;
+			if($("select[name='select_stage[]']").val() == undefined){
+			    alert('请设置任务阶段');
+			    return false;
+			}
+			$.each($("select[name='select_stage[]']"),function (k,v) {
+				//alert(k+'|'+v.value);
+				for (var i in hash){
+				    if(hash[i] == v.value){
+						alert('有重复阶段，请重新设置！');
+                        flag = false;
+					}
+				}
+				hash[k] = v.value;
+            });
+			if(!flag){
+                return flag;
+			}
+        })
+		
+
+    });
+
+</script>

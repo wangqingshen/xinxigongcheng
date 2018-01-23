@@ -1,0 +1,66 @@
+<tc_include file="Common:head" />
+<body>
+<div class="aui-content answer-detail-content aui-margin-l-15 aui-margin-r-15">
+    <ul class="aui-list aui-media-list answer-info">
+        <li class="aui-list-item" style="border-top: 0;background: none;">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title answer-detail-title"></div>
+                    </div>
+                    <div class="aui-list-item-text task_content" style="color: #434343">
+                        
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item expert-list">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media aui-iconfont" style="font-size: 13px;">
+                    分配专家
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title">
+                        </div>
+                        <div class="aui-list-item-right expert-type-inner" style="max-width: 100%;margin-top: 3px;">
+                            <span class="select-expert-type">请选择</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="aui-content aui-content-padded" id="message-content">
+    </div>
+</div>
+<div class="copy-item-right aui-hide">
+    <div class="aui-chat-sender">
+        <div class="aui-chat-sender-avatar"><img src="__ROOT__/application/Html/Dist/images/login_bg_2.jpg"></div>
+        <div class="aui-chat-sender-cont">
+            <div class="aui-chat-right-triangle"></div>
+            <span class="wx-name">外部用户微信昵称</span>
+            <span class="wx-date">2017-10-20 10:10:50</span>
+            <span class="wx-content">我也不清楚</span>
+        </div>
+    </div>
+</div>
+<div class="copy-item-left aui-hide">
+    <div class="aui-chat-receiver">
+        <div class="aui-chat-receiver-avatar"><img src="__ROOT__/application/Html/Dist/images/login_bg_1.jpg"></div>
+        <div class="aui-chat-receiver-cont">
+            <div class="aui-chat-left-triangle"></div>
+            <span class="wx-name">专家微信昵称</span>
+            <span class="wx-date">2017-10-20 10:10:50</span>
+            <span class="wx-content">你好！</span>
+        </div>
+    </div>
+</div>
+<tc_include file="Common:script" />
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/aui/aui-scroll.js" ></script>
+<tc_include file="Common:expertFooter" />
+<script type="text/javascript">
+// var taskUrl = "{:U('employee/index')}";
+AdminExpertDetail.init();
+</script>
+</html>

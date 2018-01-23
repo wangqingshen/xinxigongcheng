@@ -1,0 +1,13 @@
+
+[2017-11-03 13:56:04]
+##line=114##data:{"header":{"timestamp":"171103015604","nonce":"93396","signature":"5329dafed2d1e6af4ea23be522f8dc1539277c62"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-11-03 13:56:05]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-11-03 13:56:05]
+##line=114##data:{"header":{"timestamp":"171103015604","nonce":"43092","signature":"55caa2f3857d6dcf6ff5fd31c965310d3fba78ba"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-11-03 13:56:05]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-11-03 13:56:05]
+##line=114##data:{"header":{"timestamp":"171103015605","nonce":"48562","signature":"6dbf2335346d08462029f2730926b698564defe3"},"cmd":{"name":"get_task_examine_info"},"data":{"task_id":"97"}}##errMsg:前端传入数据
+[2017-11-03 13:56:06]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"title":"\u6d4b\u8bd5\u4efb\u52a1","content":"\u5927\u591a\u6492\u6eda\u6eda\u6eda","status":"1","task_img":"null","task_examine_explain":null,"process":[{"stage_name":"\u8bc9\u6c42\u767b\u8bb0","account_name":"\u674e\u60f3","mobile":"18628062001"},{"stage_name":"\u5feb\u901f\u5bf9\u63a5","account_name":"\u674e\u60f3\u5c0f\u53f7","mobile":"18111247718"},{"stage_name":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","account_name":"\u97e9\u56fd","mobile":"01072041489"}]}}##errMsg:成功返回数据日志

@@ -1,0 +1,178 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Task/task_list')}">任务列表</a></li>
+			<li class="active"><a href="#">任务详情</a></li>
+		</ul>
+		<form id="task_form" method="post" class="form-horizontal js-ajax-form">
+			<input type="hidden" value="{$task_id}" id="task_id" />
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">任务标题：</label>
+					<div class="controls">
+						{$task_title}
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">创建时间：</label>
+					<div class="controls">
+						{$task_create_time}
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">任务详情：</label>
+					<div class="controls">
+						{$task_content}
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">任务图片：</label>
+					<div class="controls">
+						<img src="{$task_img}" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">提交说明：</label>
+					<div class="controls">
+						{$task_examine_explain}
+					</div>
+				</div>
+				<volist name="process_list" id="process">
+				<div class="control-group">
+					<label style="text-align: left;border: 0px dotted black;margin-left: 7%">{$process.p_stage_name}执行人：{$process.a_name}</label>
+					<label style="text-align: left;border: 0px dotted black;margin-left: 7%">联系电话：{$process.a_mobile}</label>
+				</div>
+				</volist>
+				<if condition="$task_status eq 2 or $task_status eq 3">
+					<div class="control-group">
+						<label class="control-label">备注：</label>
+						<div class="controls">
+							<textarea id="examine_explain"></textarea>
+						</div>
+					</div>
+				</if>
+			</fieldset>
+			<if condition="$task_status eq 1">
+				<div class="form-actions">
+					<span>任务进行中</span>
+				</div>
+				<elseif condition="$task_status eq 2"/>
+				<div class="form-actions">
+					<button type="button" class="btn btn-primary" id="btn_agree_examine">审核完成</button>
+					<button type="button" class="btn btn-primary" id="btn_not_agree_examine">审核未通过</button>
+				</div>
+				<elseif condition="$task_status eq 3"/>
+				<div class="form-actions">
+					<button type="button" class="btn btn-primary" id="btn_agree_discontinue">同意中止</button>
+					<button type="button" class="btn btn-primary" id="btn_not_agree_discontinue">不同意中止</button>
+				</div>
+				<elseif condition="$task_status eq 4"/>
+				<div class="form-actions">
+					<span>任务已完成审核</span>
+				</div>
+				<elseif condition="$task_status eq 5"/>
+				<div class="form-actions">
+					<span>任务已中止</span>
+				</div>
+			</if>
+
+		</form>
+	</div>
+</body>
+</html>
+<script src="__PUBLIC__/js/validate.js"></script>
+<script>
+	$(function () {
+		//审核通过
+		$('#btn_agree_examine').click(function () {
+			if($('#examine_explain').val() == ''){
+				alert('请填写备注信息');
+				return false;
+			}
+			var data = "task_id="+$('#task_id').val()+'&task_status=4&examine_explain='+$('#examine_explain').val();
+			var url = "{:U('Task/update_task')}";
+			$.ajax({
+				url:url,
+				data:data,
+				success:function(data){
+					if(data.errcode == 1){
+						alert('审核成功');
+						location.reload();
+					}else{
+						alert(data.msg);
+						return;
+					}
+				}
+			});
+		});
+		//审核未通过
+		$('#btn_not_agree_examine').click(function () {
+			if($('#examine_explain').val() == ''){
+				alert('请填写备注信息');
+				return false;
+			}
+			var data = "task_id="+$('#task_id').val()+'&task_status=1&examine_explain='+$('#examine_explain').val();
+			var url = "{:U('Task/update_task')}";
+			$.ajax({
+				url:url,
+				data:data,
+				success:function(data){
+					if(data.errcode == 1){
+						alert('操作成功');
+						location.reload();
+					}else{
+						alert(data.msg);
+						return;
+					}
+				}
+			});
+		});
+		//同意中止
+		$('#btn_agree_discontinue').click(function () {
+			if($('#examine_explain').val() == ''){
+				alert('请填写备注信息');
+				return false;
+			}
+			var data = "task_id="+$('#task_id').val()+'&task_status=5&examine_explain='+$('#examine_explain').val();
+			var url = "{:U('Task/update_task')}";
+			$.ajax({
+				url:url,
+				data:data,
+				success:function(data){
+					if(data.errcode == 1){
+						alert('操作成功');
+						location.reload();
+					}else{
+						alert(data.msg);
+						return;
+					}
+				}
+			});
+		});
+		//不同意中止
+		$('#btn_not_agree_discontinue').click(function () {
+			if($('#examine_explain').val() == ''){
+				alert('请填写备注信息');
+				return false;
+			}
+			var data = "task_id="+$('#task_id').val()+'&task_status=1&examine_explain='+$('#examine_explain').val();
+			var url = "{:U('Task/update_task')}";
+			$.ajax({
+				url:url,
+				data:data,
+				success:function(data){
+					if(data.errcode == 1){
+						alert('操作成功');
+						location.reload();
+					}else{
+						alert(data.msg);
+						return;
+					}
+				}
+			});
+		});
+    })
+
+</script>

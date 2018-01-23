@@ -1,0 +1,238 @@
+<?php
+namespace Api\Event;
+
+use Think\Log;
+
+class AccountEvent
+{
+    private $_log;//日志对象
+    private $_account_model;
+    private $_wechat_member_model;
+    private $_account_type;
+    private $_wechat_obj;
+    /*日志常量*/
+    const INFO = 'INFO';  // 流水日志
+    const ERR = 'ERR';  // 一般错误
+    const LOG_FILE = 5;
+    public function __construct()
+    {
+        $this->_log = new Log();
+        $this->_account_model = D('Account');
+        $this->_wechat_member_model = D('WechatMember');
+        $this->_account_type = C('account_type');
+        Vendor('Wechat');
+        $this->_wechat_obj = new \Wechat();
+    }
+
+    /**
+     * 函数用途描述:根据账户类型，获取账户
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function get_accounts($data, &$result = null){
+        $params = array('account_type');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $condition = array(
+            'a_type' => $data['account_type'],
+            'status' => 1
+        );
+        $account_list = array();
+        $field = 'a_id,a_name';
+        $ret = $this->_account_model->get_account_by_condition($condition,$field,$account_list,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        $result = $account_list;
+        return true;
+    }
+
+    /**
+     * 函数用途描述:检测手机验证码和手机是否匹配
+     * @author:risoli
+     * @param $code
+     * @param $mobile
+     * @return bool
+     */
+    private function _check_sns($code,$mobile){
+        $get_session_code = S($mobile.'seccode');
+        if($get_session_code !== $code){
+            return 10300;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:获取微信用户信息
+     * @author:risoli
+     * @param $openid
+     * @return int|mixed|string
+     */
+    private function _get_wechat_member_info($openid,&$wechat_member_info){
+        if(empty($openid)){
+            return 1007;
+        }
+        //获取access_token
+        if(empty(S($openid))){
+            //刷新获取access_token
+            $this->_wechat_obj->refresh_access_token($openid);
+        }
+        $access_token = S($openid);
+        $wechat_member_info = $this->_wechat_obj->get_member_wechat_info($access_token,$openid);
+        return true;
+
+    }
+
+    /**
+     * 函数用途描述:绑定微信用户账号信息
+     * @author:risoli
+     * @param $openid
+     * @param $mobile
+     * @param $wechat_member_id
+     * @return bool|int|mixed|string
+     */
+    private function _bind_wechat_member($openid,$mobile,&$wechat_member_id){
+        //check用户是否已绑定信息
+        $member_info = array();
+        $ret = $this->_wechat_member_model->get_wechat_member_by_mobile($mobile,$member_info);
+        if($ret !== true){
+            return $ret;
+        }
+        if(empty($member_info)){
+            //获取微信用户信息
+            $ret = $this->_get_wechat_member_info($openid,$wechat_member_info);
+            if($ret !== true){
+                return $ret;
+            }
+            //注册
+            $insert_data = array(
+                'wm_mobile' => $mobile,
+                'wm_open_id' => $openid,
+                'wm_nick_name' => $wechat_member_info['nickname'],
+                'wm_head_img' => $wechat_member_info['headimgurl'],
+            );
+            $wechat_member_id = '';
+            $ret = $this->_wechat_member_model->create_wechat_member($insert_data,$wechat_member_id);
+            if($ret !== true){
+                return $ret;
+            }
+        }else{
+            //将微信用户id返回
+            $wechat_member_id = $member_info['wm_id'];
+        }
+        return true;
+    }
+
+    private function _bind_account_member($mobile,$wechat_openid,&$account_info){
+        //step1 判断账号是否已在后台添加
+        $account_info = array();
+        $ret = $this->_account_model->get_account_by_mobile($mobile,$account_info);
+        if($ret !== true){
+            return $ret;
+        }
+        if(empty($account_info)){
+            return 10200;
+        }elseif ($account_info['status'] == 3){
+            return 10201;
+        }
+        //step2 获取微信用户信息
+        $wechat_member_info = array();
+        $ret = $this->_get_wechat_member_info($wechat_openid,$wechat_member_info);
+        if($ret !== true){
+            return $ret;
+        }
+        //step2 将微信信息写入账户信息，并激活
+        $condition = array(
+            'a_mobile' => $mobile
+        );
+        $update_data = array(
+            'a_wechat_open_id' => $wechat_openid,
+            'a_nick_name' => bin2hex($wechat_member_info['nickname']),
+            'a_head_img' => $wechat_member_info['headimgurl'],
+            'status' => 1
+        );
+        $ret = $this->_account_model->update_account($condition,$update_data);
+        if($ret !== true){
+            return $ret;
+        }
+        return true;
+    }
+    /**
+     * 函数用途描述:绑定账号
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function bind_account($data, &$result = null){
+        $params = array('wechat_openid','type','mobile','sns_code');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $type = $data['type'];
+        $wechat_openid = $data['wechat_openid'];
+        $sns_code = $data['sns_code'];
+        $mobile = $data['mobile'];
+        //step1 验证短信验证码是否匹配
+        $ret = $this->_check_sns($sns_code,$mobile);
+        if($ret !== true){
+            return $ret;
+        }
+        //step2 根据用户登录类型，调用不同的账号绑定方法
+        switch ($type){
+            case 'fans':
+                $wechat_member_id = '';
+                $ret = $this->_bind_wechat_member($wechat_openid,$mobile,$wechat_member_id);
+                if($ret !== true){
+                    return $ret;
+                }
+                $result['wechat_member_id'] = $wechat_member_id;
+                $result['mobile'] = $mobile;
+                break;
+            default:
+                $account_info = array();
+                $ret = $this->_bind_account_member($mobile,$wechat_openid,$account_info);
+                if($ret !== true){
+                    return $ret;
+                }
+                $result['account_id'] = $account_info['a_id'];
+                $result['account_name'] = $account_info['a_name'];
+                $result['account_type'] = $this->_account_type[$account_info['a_type']];
+                break;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据专家类型，获取专家
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function get_expert_account($data, &$result = null){
+        $params = array('expert_type');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $condition = array(
+            'a_expert_id' => $data['expert_type']
+        );
+
+        $filed= 'a_id as expert_id,a_name as expert_name';
+        $expert_list = array();
+        $ret = $this->_account_model->get_account_by_condition($condition,$filed,$expert_list);
+        if($ret !== true){
+            return $ret;
+        }
+        $result = $expert_list;
+        return true;
+    }
+
+}

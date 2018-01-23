@@ -1,0 +1,199 @@
+<?php
+namespace Admin\Controller;
+
+use Common\Controller\AdminbaseController;
+use Think\Log;
+
+class TaskController extends AdminbaseController{
+	private $_task_model;
+	private $_account_model;
+    private $_process_model;
+
+    private $_task_type;
+    private $_task_status;
+    private $_stage;
+    private $_account_type;
+    private $_log;
+    /*日志常量*/
+    const INFO = 'INFO';  // 流水日志
+    const ERR = 'ERR';  // 一般错误
+    const LOG_FILE = 7;
+	
+	public function _initialize() {
+        $this->_task_model = D('Task');
+        $this->_account_model = D('Account');
+        $this->_process_model = D('Process');
+
+        $this->_task_type = C('task_type');
+        $this->_task_status = C('task_status');
+        $this->_stage = C('stage');
+        $this->_account_type = C('account_type');
+        $this->_log = new Log();
+	}
+
+    /**
+     * 函数用途描述:任务列表
+     * @author:risoli
+     */
+    public function task_list(){
+        //统计任务总数
+        $task_count = 0;
+        $ret = $this->_task_model->count_task(null, $task_count);
+        if($ret !== true){
+            $this->error('获取任务总数出错，错误代码:'.$ret);
+        }
+        //实例化分页类
+        $size = 10;//默认20条
+        $page = $this->Page($task_count,$size);
+        $show = $page->show('Admin');
+        //获取任务列表
+        $order = 't_id desc';
+        $field = 't_id,t_title,t_create_time,t_type,t_status';
+        $task_list = array();
+        $ret = $this->_task_model->get_task_list_show(null,$field,$page,$order,$task_list ,$msg);
+        if($ret !== true){
+            $this->error($msg);
+        }
+        $res_list = array();
+        foreach ($task_list as $key => $value){
+            $res_list[$key]['task_id'] = $value['t_id'];
+            $res_list[$key]['task_create_time'] = date("Y-m-d H:i:s",$value['t_create_time']);
+            $res_list[$key]['task_title'] = $value['t_title'];
+            $res_list[$key]['task_type'] = $this->_task_type[$value['t_type']];
+            $res_list[$key]['task_status'] = $this->_task_status[$value['t_status']];
+        }
+
+
+        $this->assign("page_show",$show);
+        $this->assign('res_list',$res_list);
+	    $this->display();
+    }
+
+    /**
+     * 函数用途描述:创建任务页面
+     * @author:risoli
+     */
+    public function add_task(){
+        $this->assign('task_type',$this->_task_type);
+        $this->assign('stage',json_encode($this->_stage));
+        $this->assign('account_type',json_encode($this->_account_type));
+        $this->display();
+    }
+
+    /**
+     * 函数用途描述:提交新建任务
+     * @author:risoli
+     */
+    public function add_task_post(){
+        //设置任务信息
+        $task_title = I('task_title');
+        $task_content = I('task_content');
+        $task_img = C('UPLOADPATH').I('task_img');
+        $task_type = I('select_task_type');
+        $task_data = array(
+            't_create_time' => time(),
+            't_title'   => $task_title,
+            't_content' => $task_content,
+            't_type'    => $task_type,
+            't_img'     => $task_img,
+            'user_id'   => $_SESSION['ADMIN_ID'],
+            't_status'  => 1
+        );
+        //设置流程信息
+        $select_stage = I('select_stage');
+        $account_id = I('select_account');
+        $process_data = array();
+        for ($i = 0;$i<count($select_stage);$i++){
+            //获取流程账户信息
+            $account_info = array();
+            $ret = $this->_account_model->get_account_info_by_id($account_id[$i],$account_info,$msg);
+            if($ret !== true){
+                $this->error($msg);
+                exit;
+            }
+            //设置需要创建的流程信息
+            $process_data[$select_stage[$i]]['a_type'] = $account_info['a_type'];
+            $process_data[$select_stage[$i]]['a_id'] = $account_info['a_id'];
+            $process_data[$select_stage[$i]]['a_name'] = $account_info['a_name'];
+        }
+        $task_id = '';
+        $ret = $this->_task_model->create_task($task_data,$process_data,$task_id,$msg);
+        if($ret !== true){
+            $this->error($msg);
+            exit;
+        }
+        $this->success('创建任务成功','index.php?s=/Admin/Task/task_list');
+    }
+
+    /**
+     * 函数用途描述:任务详情
+     * @author:risoli
+     */
+    public function task_info(){
+        $task_id = I('task_id');
+        //获取任务信息
+        $task_info = array();
+        $ret = $this->_task_model->get_task_info_by_id($task_id,$task_info,$msg);
+        if($ret !== true){
+            $this->error($msg);
+            exit;
+        }
+        //获取任务流程
+        $process_list = array();
+        $process_condition = array(
+            't_id' => $task_id
+        );
+        $ret = $this->_process_model->get_p_list_by_condition($process_condition,$process_list,$msg);
+        if($ret !== true){
+            $this->error($msg);
+            exit;
+        }
+        foreach ($process_list as $key => $value){
+            //获取执行人电话
+            $account_id = $value['a_id'];
+            $account_info = array();
+            $ret = $this->_account_model->get_account_info_by_id($account_id,$account_info,$msg);
+            if($ret !== true){
+                $this->_log->write_array($ret,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+                continue;
+            }
+            $process_list[$key]['a_mobile'] = $account_info['a_mobile'];
+        }
+
+        $this->assign('task_id',$task_info['t_id']);
+        $this->assign('task_title',$task_info['t_title']);
+        $this->assign('task_content',$task_info['t_content']);
+        $this->assign('task_create_time',date("Y-m-d H:i:s",$task_info['t_create_time']));
+        $this->assign('task_content',$task_info['t_content']);
+        $this->assign('task_img',$task_info['t_img']);
+        $this->assign('task_examine_explain',$task_info['t_examine_explain']);
+        $this->assign('task_status',$task_info['t_status']);
+        $this->assign('process_list',$process_list);
+        $this->display();
+    }
+
+    public function update_task(){
+        $task_id = I('task_id');
+        $status = I('task_status');
+        $examine_explain = I('examine_explain');
+        $condition = array(
+            't_id' => $task_id
+        );
+        $update_data = array(
+            't_status' => $status,
+            't_examine_explain' => $examine_explain
+        );
+        $ret = $this->_task_model->update_task($condition,$update_data,$msg);
+        if($ret!== true){
+            $result = array(
+                'errcode' => 0,
+                'msg' => $msg
+            );
+        }else{
+            $result = array(
+                'errcode' => 1
+            );
+        }
+        $this->ajaxReturn($result);
+    }
+}

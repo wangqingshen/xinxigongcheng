@@ -1,0 +1,23 @@
+<?php
+namespace Admin\Controller;
+
+use Common\Controller\AdminbaseController;
+
+class TaskController extends AdminbaseController{
+    
+	private $_account_model;
+	private $_dep_arr;
+	private $_expert_arr;
+	
+	public function _initialize() {
+	    $this->_dep_arr = C('dep_arr');
+	    $this->_expert_arr = C('expert_type');
+
+        $this->_account_model = D('Account');
+	}
+
+    public function task_list(){
+	    echo 333;exit;
+    }
+
+}

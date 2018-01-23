@@ -1,0 +1,139 @@
+<tc_include file="Common:head" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/aui/aui-pull-refresh.css" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/fsgallery.css" />
+<body>
+<div class="aui-refresh-content review-content">
+	<ul class="aui-list aui-media-list" style="background: none;">
+	</ul>
+</div>
+<div class="copy-content aui-hide">
+<li class="aui-list-item aui-list-item-arrow">
+    <div class="aui-media-list-item-inner">
+        <div class="aui-list-item-inner">
+            <div class="aui-list-item-text">
+                <div class="aui-list-item-title"></div>
+                <div class="aui-list-item-right">
+                    <span class="task-date"></span>
+                    <span class="task-progress"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+</div>
+<div id="dialog-inner-content" class="copy-dialog-content aui-hide">
+    <div class="popup-content">
+        <ul class="aui-list aui-media-list"> 
+            <li class="aui-list-item" > 
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        任务标题：
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">
+                            </div>
+                            <div class="aui-list-item-right task-name" style="max-width: 100%;margin-top: 3px;">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item task-content-item" > 
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        任务描述：
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">
+                            </div>
+                            <div class="aui-list-item-right popup-task-content" style="max-width: 100%;margin-top: 3px;">
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item task-img-item" style="display: none;"> 
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        任务图片：
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">
+                            </div>
+                            <div class="aui-list-item-right task-img-content" style="max-width: 100%;margin-top: 3px;">
+                                <img src="" alt="任务图片" style="width: 90px;height: 90px;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item task-explain-item" style="display: none;"> 
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        提交说明：
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">
+                            </div>
+                            <div class="aui-list-item-right task-explain-content" style="max-width: 100%;margin-top: 3px;">
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item remark-item" style="background: 0;"> 
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media">
+                        备注：
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title">
+                            </div>
+                            <div class="aui-list-item-right" style="width: 100%;max-width: 100%;margin-top: 3px;">
+                                <div class="f-textarea">
+                                    <textarea name="remark" id="review-remark" placeholder="备注内容"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="item-copy aui-hide">
+     <li class="aui-list-item" > 
+        <div class="aui-media-list-item-inner">
+            <div class="aui-list-item-media task-step">
+            
+            </div>
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-text">
+                    <div class="aui-list-item-title task-step-name">
+                    </div>
+                    <div class="aui-list-item-right" style="max-width: 100%;margin-top: 3px;">
+                        <span class="task-step-mob"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</div>
+<input type="hidden" name="footerActive" value="2" />
+<tc_include file="Common:script" />
+<tc_include file="Common:footer" />
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/aui/aui-scroll.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/aui/aui-pull-refresh.js"></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/fsgallery.js" ></script>
+<script type="text/javascript">
+Review.init();
+</script>
+</body>

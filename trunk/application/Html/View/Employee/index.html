@@ -1,0 +1,32 @@
+<tc_include file="Common:head" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/aui/aui-pull-refresh.css" />
+<body>
+<div class="aui-refresh-content employee-content">
+    <ul class="aui-list aui-media-list" style="background: 0;">
+
+    </ul>
+</div>
+<div class="copy-content aui-hide">
+<li class="aui-list-item aui-list-item-arrow">
+    <div class="aui-media-list-item-inner">
+        <div class="aui-list-item-inner">
+            <div class="aui-list-item-text">
+                <div class="aui-list-item-title"></div>
+                <div class="aui-list-item-right">
+                    <span class="task-date"></span>
+                    <span class="task-progress"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+</div>
+<tc_include file="Common:script" />
+<tc_include file="Common:footer1" />
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/aui/aui-scroll.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/aui/aui-pull-refresh.js"></script>
+<script type="text/javascript">
+var detailUrl = "{:U('employee/detail')}";
+Employee.init();
+</script>
+</body>

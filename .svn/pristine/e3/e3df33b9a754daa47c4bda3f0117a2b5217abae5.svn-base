@@ -1,0 +1,136 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U($account_fun)}">账户列表</a></li>
+			<li class="active"><a href="{:U('Account/add_account',array('account_type'=>$account_type))}">{$edit_account_cn}</a></li>
+		</ul>
+		<form id="account_form" method="post" class="form-horizontal js-ajax-form" action="{:U('Account/edit_account_post')}">
+			<input type="hidden" value="{$account_type}" name="account_type" />
+			<input type="hidden" value="{$account_info.a_id}" name="account_id" />
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">真实姓名：</label>
+					<div class="controls">
+						<input type="text" name="real_name" id="real_name" value="{$account_info.a_name}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">手机号：</label>
+					<div class="controls">
+						<input type="text" name="mobile" id="mobile" value="{$account_info.a_mobile}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">性别：</label>
+					<div class="controls">
+						<select name="select_sex" id="select_sex">
+							<if condition="$account_info.a_sex eq 1">
+								<option value="">请选择</option>
+								<option value="1" selected="selected">男</option>
+								<option value="2">女</option>
+							<elseif condition="$account_info.a_sex eq 2" />
+								<option value="">请选择</option>
+								<option value="1">男</option>
+								<option value="2" selected="selected">女</option>
+							<else />
+								<option value="">请选择</option>
+								<option value="1">男</option>
+								<option value="2">女</option>
+							</if>
+						</select>
+					</div>
+				</div>
+				<if condition="$account_type eq 4">
+					<div class="control-group">
+						<label class="control-label">专家类型：</label>
+						<div class="controls">
+							<select name="select_expert" id="select_expert">
+								<volist name="expert_type" id="expert" key="k">
+									<if condition="$account_info.a_expert_id eq $k">
+										<option value="{$k}" selected="selected">{$expert}</option>
+										<else />
+										<option value="{$k}">{$expert}</option>
+									</if>
+								</volist>
+							</select>
+						</div>
+					</div>
+				<else />
+					<div class="control-group">
+						<label class="control-label">部门：</label>
+						<div class="controls">
+							<select name="select_dep" id="select_dep">
+								<volist name="departments" id="dep" key="k">
+									<if condition="$account_info.a_department_id eq $k">
+										<option value="{$k}" selected="selected">{$dep}</option>
+										<else />
+										<option value="{$k}">{$dep}</option>
+									</if>
+								</volist>
+							</select>
+						</div>
+					</div>
+				</if>
+
+			</fieldset>
+			<div class="form-actions">
+				<button id="btn_submit" type="submit" class="btn btn-primary js-ajax-submit">{:L('EDIT')}</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+<script src="__PUBLIC__/js/validate.js"></script>
+<script>
+	$(function () {
+	    $('#btn_submit').click(function () {
+            if(confirm('是否确认编辑账号信息？')){
+                return true;
+            }else {
+                return false;
+            }
+        });
+		$('#account_form').validate({
+			rules:{
+				real_name:{
+				    required:true,
+					maxlength:20
+				},
+				mobile:{
+				    required:true,
+					maxlength:11,
+                    minlength:11,
+					number:true
+				},
+				select_sex:{
+				    required:true
+				},
+				select_dep:{
+				    required:true
+				}
+			},
+			messages:{
+			    real_name:{
+			        required:"<span style='color: red'>真实姓名不能为空</span>",
+					maxlength:"<span style='color: red'>真实姓名不能超过10个汉字</span>"
+				},
+				mobile:{
+			        required:"<span style='color: red'>手机号不能为空</span>",
+                    maxlength:"<span style='color: red'>手机号为11位</span>",
+                    minlength:"<span style='color: red'>手机号为11位</span>",
+					number:"<span style='color: red'>只能输入正确的手机号</span>"
+				},
+				select_sex:{
+			        required:"<span style='color: red'>请选择性别</span>"
+				},
+                select_dep:{
+                    required:"<span style='color: red'>请选择部门</span>"
+                }
+			}
+		});
+    })
+
+</script>

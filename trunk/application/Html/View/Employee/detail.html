@@ -1,0 +1,123 @@
+<tc_include file="Common:head" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/fsgallery.css" />
+<body>
+<div class="aui-content detail-content aui-margin-l-15 aui-margin-r-15">
+    <h1 class="task_title"></h1>
+    <ul class="aui-list aui-media-list">
+        <li class="aui-list-item" style="border-top: 0;background: none;">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title">任务职责</div>
+                    </div>
+                    <div class="aui-list-item-text task_content">
+                        
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item task-info aui-hide" style="border-top: 0;background: none;">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title">任务补充资料</div>
+                    </div>
+                    <div class="aui-list-item-text">
+                        <img src="" alt="任务图片" style="width: 90px;height: 90px;"/>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="tree-wrap">
+        <div class="middle_line"></div>
+        <div class="tree-list">
+
+        </div>
+    </div>
+     <ul class="aui-list aui-media-list task-explain aui-hide" style="border-top: 0;background: none;">
+        <li class="aui-list-item" style="border-top: 0;background: none;">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title">反馈说明</div>
+                    </div>
+                    <div class="aui-list-item-text task-explain-content">
+                        
+                    </div>
+                </div>
+            </div>
+        </li>
+     </ul>
+</div>
+<div class="copy-item-right aui-hide">
+    <div class="tree-item">
+        <div class="item-info">
+            <p class="item-date"></p>
+            <p><span class="item-stage"></span></p>
+            <p><span class="item-user"></span></p>
+        </div>
+        <div class="item-img"><img src="#" alt="流程图" /></div>
+    </div>
+</div>
+<div class="copy-item-left aui-hide">
+    <div class="tree-item">
+        <div class="item-img"><img src="#" alt="流程图" /></div>
+         <div class="item-info">
+            <p class="item-date"></p>
+            <p><span class="item-stage"></span></p>
+            <p><span class="item-user"></span></p>
+        </div>
+    </div>
+</div>
+<div id="task-img-dialog" class="aui-hide">
+    <div class="popup-content img-popup-content">
+    </div>
+</div>
+<div id="task-transfer-dialog" class="aui-hide">
+    <div class="popup-content transfer-popup-content">
+        <p>确认已完成当前任务，确认要任务流转吗？</p>
+    </div>
+</div>
+<div id="task-review-dialog" class="aui-hide">
+    <div class="popup-content transfer-popup-content">
+        <h1>填写审核提交原因</h1>
+        <div class="review-content">
+            <textarea placeholder="请输入审核原因"></textarea>
+        </div>
+    </div>
+</div>
+
+<div id="task-over-dialog" class="aui-hide">
+    <div class="popup-content transfer-popup-content">
+        <h1>填写任务中止原因</h1>
+        <div class="over-content">
+            <textarea placeholder="请输入任务中止原因"></textarea>
+        </div>
+    </div>
+</div>
+
+<div id="img-dialog" class="aui-hide">
+    <div class="popup-content img-content">
+        <a href="javascript:void(0)" class="chooseImgBtn">+</a>
+    </div>
+</div>
+
+<div id="task-change-dialog" class="aui-hide">
+    <div class="popup-content transfer-popup-content">
+        <h1>申请变更当前进程任务执行人原因</h1>
+        <div class="change-content">
+            <textarea placeholder="请输入变更执行人原因"></textarea>
+        </div>
+    </div>
+</div>
+</body>
+<tc_include file="Common:footer2" />
+<tc_include file="Common:script" />
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/wx.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/fsgallery.js" ></script>
+<script type="text/javascript">
+var taskUrl = "{:U('employee/index')}";
+Employeedetail.init();
+</script>
+</html>

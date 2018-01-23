@@ -1,0 +1,74 @@
+<admintpl file="header" />
+<link href="__PUBLIC__/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="__PUBLIC__/js/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U($account_fun)}">月任务统计</a></li>
+		</ul>
+		<form id="count_form" method="post" class="form-horizontal" action="{:U('Statistics/month_consult_task')}">
+			年份查询
+			<span>
+				<input type="text" id="select_year" name="select_year" style="width: 100px;" value="{$select_year}">
+			</span>
+		</form>
+
+		<div id="task_month" style="width: 1000px;height:800px;"></div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script src="__PUBLIC__/js/bootstrap/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/js/datetimepicker/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script src="__PUBLIC__/js/echarts/echarts.min.js"></script>
+	<script type="text/javascript">
+        $(function () {
+            $('#select_year').datetimepicker({
+                format: 'yyyy',
+                weekStart: 1,
+                todayBtn:  1,
+                autoclose: 1,
+                todayHighlight: 1,
+                startView: 4, //这里就设置了默认视图为年视图
+                minView: 4, //设置最小视图为年视图
+                forceParse: 0
+			});
+			$('#select_year').change(function () {
+				$('#count_form').submit();
+			})
+        	//初始化统计数据
+            var res_month = $.parseJSON('{$res_month}');
+			var months = [];
+			var month_count = [];
+            $.each(res_month,function (k,v) {
+				months[k] = v.month;
+				month_count[k] = v.count;
+            });
+			// 基于准备好的dom，初始化echarts实例
+			var task_month_echarts = echarts.init(document.getElementById('task_month'));
+
+			// 指定图表的配置项和数据
+			var option = {
+				title: {
+					text: '月任务统计'
+				},
+				tooltip: {},
+				legend: {
+					data:['任务数']
+				},
+				xAxis: {
+					data: months
+				},
+				yAxis: {},
+				series: [{
+					name: '任务数',
+					type: 'bar',
+					data: month_count
+				}]
+			};
+
+			// 使用刚指定的配置项和数据显示图表。
+			task_month_echarts.setOption(option);
+        });
+	</script>
+</body>
+</html>

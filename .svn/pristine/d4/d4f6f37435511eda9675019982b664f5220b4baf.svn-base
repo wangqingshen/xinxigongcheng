@@ -1,0 +1,179 @@
+<?php
+namespace Admin\Controller;
+
+use Common\Controller\AdminbaseController;
+use Think\Log;
+class ActivityController extends AdminbaseController{
+    
+	private $_account_model;
+	private $_activity_msg_model;
+	private $_dep_arr;
+	private $_account_type;
+    private $_log;//日志对象
+    /*日志常量*/
+    const INFO = 'INFO';  // 流水日志
+    const ERR = 'ERR';  // 一般错误
+    const LOG_FILE = 6;
+	
+	public function _initialize() {
+	    $this->_log = new Log();
+	    $this->_dep_arr = C('dep_arr');
+	    $this->_account_type = C('account_type');
+        $this->_account_model = D('Account');
+        $this->_activity_msg_model = D('ActivityMsg');
+	}
+
+    /**
+     * 函数用途描述:通知列表
+     * @author:risoli
+     */
+	public function msg_list(){
+        //统计消息总数
+        $msg_count = 0;
+        $ret = $this->_activity_msg_model->count_msg(null, $msg_count);
+        if($ret !== true){
+            $this->error('获取消息总数出错，错误代码:'.$ret);
+        }
+        //实例化分页类
+        $size = 5;//默认20条
+        $page = $this->Page($msg_count,$size);
+        $show = $page->show('Admin');
+
+        $order = 'am_id desc';
+        $msg_list = array();
+        $ret = $this->_activity_msg_model->get_msg_list_show(null,'*',$page,$order,$msg_list ,$msg);
+        if($ret !== true){
+            $this->error($msg);
+        }
+        foreach ($msg_list as $key => $value){
+            $msg_list[$key]['create_time'] = date("Y-m-d H:i:s",$value['am_create_time']);
+            if($value['am_type'] == 1){
+                $msg_list[$key]['msg_type'] = '个人';
+            }elseif ($value['am_type'] == 2){
+                $msg_list[$key]['msg_type'] = '账户';
+            }
+
+        }
+        $this->assign("page_show",$show);
+        $this->assign('msg_list',$msg_list);
+
+	    $this->display();
+	    exit;
+
+
+
+    }
+
+    /**
+     * 函数用途描述:发送通知页面
+     * @author:risoli
+     */
+    public function send_msg(){
+        $this->display();
+    }
+
+    /**
+     * 函数用途描述:创建发送通知
+     * @author:risoli
+     */
+    public function send_msg_post(){
+        $msg_type = I('select_msg_type');
+        $msg_content = I('msg_content');
+        $webiste_url = I('website_url');
+        if(!empty($webiste_url)){
+            $webiste_url = I('select_internet').$webiste_url;
+        }
+        $openid_arr = array();
+        if($msg_type == 1){
+            $account_mobile = I('msg_for_single');
+            //获取账户信息
+            $account_info = array();
+            $ret = $this->_account_model->get_account_by_mobile($account_mobile,$account_info,$msg);
+            if($ret !== true){
+                $json = array(
+                    'errcode' => $ret,
+                    'errmsg' => '获取用户信息失败'
+                );
+                echo json_encode($json);exit;
+            }
+            $openid_arr[0] = $account_info['a_wechat_open_id'];
+            $receiver = $account_mobile;
+        }elseif ($msg_type == 2){
+            $account_type = I('select_account_type');
+            //获取账户类型下面的账户
+            $condition = array(
+                'a_type' => $account_type,
+                'a_wechat_open_id' => array('neq','null')
+            );
+            $account_list = array();
+            $filed = 'a_wechat_open_id';
+            $ret = $this->_account_model->get_account_by_condition($condition,$filed,$account_list,$msg);
+            if($ret !== true){
+                $json = array(
+                    'errcode' => $ret,
+                    'errmsg' => '获取账户类型下的账户信息失败'
+                );
+                echo json_encode($json);exit;
+            }
+            foreach ($account_list as $key => $value){
+                $openid_arr[] = $value['a_wechat_open_id'];
+            }
+            $receiver = $this->_account_type[$account_type];
+        }
+        M()->startTrans();
+        //将发送信息写入数据库
+        $insert_msg = array(
+            'am_create_time' => time(),
+            'am_type' => $msg_type,
+            'am_receiver' => $receiver,
+            'am_content'  =>$msg_content,
+            'am_link' => $webiste_url
+        );
+        $ret = $this->_activity_msg_model->create_msg($insert_msg);
+        if($ret !== true){
+            M()->rollback();
+            $json = array(
+                'errcode' => $ret,
+                'errmsg' => $msg
+            );
+            echo json_encode($json);exit;
+        }
+        //循环发送微信通知
+        for ($i = 0;$i<count($openid_arr);$i++){
+            $ret = send_wechat_msg_template(1,$openid_arr[$i],'消息通知',$msg_content,$webiste_url);
+            if($ret['errcode'] !== 0){
+                $msg = '手机号为：'.$account_mobile.'的账户,微信消息推送失败。';
+                $this->_log->write_array($ret,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+                continue;
+            }
+            if($i%10 == 0){
+                sleep(3);
+            }
+        }
+        M()->commit();
+        $json = array(
+            'errcode' => 1,
+            'errmsg' => '消息已发送完成'
+        );
+        echo json_encode($json);exit;
+    }
+
+    public function msg_info(){
+        $msg_id = I('msg_id');
+        $msg_info = array();
+        $ret = $this->_activity_msg_model->get_msg_info_by_id($msg_id,$msg_info);
+        if($ret !== true){
+            $this->error('没有找到通知信息!');
+        }
+        $msg_info['create_time'] = date("Y-d-m H:i:s",$msg_info['am_create_time']);
+        $msg_info['msg_type'] = ($msg_info['am_type'] == 1)? '个人':'账户';
+
+        unset($msg_info['am_create_time']);
+        unset($msg_info['am_type']);
+
+        $this->assign('msg_info',$msg_info);
+        $this->display();
+    }
+
+
+}

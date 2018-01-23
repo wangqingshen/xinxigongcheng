@@ -1,0 +1,492 @@
+[ 2017-10-23T20:30:32+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001334s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003303s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:33:49+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000900s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002392s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:33:55+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002525s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005092s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:37:46+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001349s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001838s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000627s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004727s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:38:04+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001400s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002442s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000608s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005481s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:38:37+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001027s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004127s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:38:45+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001275s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003157s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:39:08+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001317s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003847s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:43:01+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001314s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001034s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003591s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:44:25+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002492s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.001383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006155s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+
+[ 2017-10-23T20:45:18+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000992s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003231s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:46:49+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003417s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001694s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006359s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:49:25+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001072s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001636s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004251s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:50:16+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000883s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002343s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:50:31+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001329s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001998s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004895s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:52:04+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001384s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002484s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005973s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:56:14+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000893s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002369s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:58:34+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001079s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001383s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003753s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:59:07+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001690s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004036s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T20:59:33+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001225s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003051s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:00:19+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001333s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003616s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:02:45+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001039s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003027s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:04:18+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001643s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003863s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:05:09+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001685s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004089s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:05:50+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000929s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002480s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:06:30+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000903s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002370s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:07:39+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001369s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003580s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:09:26+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000889s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002404s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:11:22+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002679s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005585s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+NOTIC: [8] Undefined offset: 1 E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 87 行.
+
+[ 2017-10-23T21:14:54+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001290s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001430s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003963s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0189s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '挖地道' AND `user_pass` = '###8672413f2ac72ea28c5b2ad70d8f9b26' LIMIT 1   [ RunTime:0.0058s ]
+
+[ 2017-10-23T21:15:39+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003264s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '颠三倒四' AND `user_pass` = '###34f2ae2a8a4b4753238613bf5c8102c1' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-10-23T21:16:54+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001068s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002834s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '是多少' AND `user_pass` = '###04f09c5466833a0f1ac2321fce1d80b1' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:17:34+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001217s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001053s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003507s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '多撒多' AND `user_pass` = '###975d27fe19129994c9da060accb755f9' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-10-23T21:18:08+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001140s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003370s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '多撒多' AND `user_pass` = '###975d27fe19129994c9da060accb755f9' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:18:42+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001321s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004159s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0057s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '多撒多' AND `user_pass` = '###ddb0e576331669393312a270710114a7' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:19:14+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002024s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002429s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005737s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '多撒多' AND `user_pass` = '###b5318c9a9d8f336aaaaa0fb783dc604c' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:19:51+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000898s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002432s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '大多数' AND `user_pass` = '###b83b92b4b7c89817d5d9cf49be3f77df' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:20:16+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000884s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002331s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '颠三倒四' AND `user_pass` = '###975d27fe19129994c9da060accb755f9' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-23T21:20:37+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000932s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002588s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0047s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '颠三倒四' AND `user_pass` = '###c3b973001d5ab64046e2395934cf826c' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:21:14+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000941s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002457s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0059s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '颠三倒四' AND `user_pass` = '###975d27fe19129994c9da060accb755f9' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-10-23T21:21:40+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001116s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002950s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0056s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '颠三倒四' AND `user_pass` = '###c701b4b10614770b5b387ff8b6f3be63' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:22:04+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001135s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002855s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0058s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '多撒多' AND `user_pass` = '###975d27fe19129994c9da060accb755f9' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T21:28:49+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000892s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002371s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0044s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '飒飒' AND `user_pass` = '###975d27fe19129994c9da060accb755f9' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:29:15+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004128s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000988s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006696s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0057s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '多撒多' AND `user_pass` = '###3c93b6ec7782f2e9c785b5e0c45d24fd' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:30:31+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000893s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002493s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '定时达' AND `user_pass` = '###752525a6de845d544ebfe8a95c479560' LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-10-23T21:31:01+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000914s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002628s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '阿达' AND `user_pass` = '###368741291685c85c099f6c29193de843' LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-10-23T21:35:48+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000874s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002361s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0032s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = '大定时达' AND `user_pass` = '###7329e347abc51da999456239f4af638c' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-23T21:36:21+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001171s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001973s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005228s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = 'test' AND `user_pass` = '###8672413f2ac72ea28c5b2ad70d8f9b26' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `user_login` = 'test' AND `user_pass` = '###8672413f2ac72ea28c5b2ad70d8f9b26' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T21:44:50+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000975s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001632s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004196s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_users` WHERE `user_login` = 'test' AND `user_pass` = '###8672413f2ac72ea28c5b2ad70d8f9b26' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `user_login` = 'test' AND `user_pass` = '###8672413f2ac72ea28c5b2ad70d8f9b26' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-10-23T22:13:23+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002032s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004387s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_task` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `xxgc_process` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0046s ]
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 87 行.
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 88 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_task` WHERE `t_status` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `t_id`,`t_title`,from_unixtime(t_create_time,"%Y-%m-%d") as create_time,`t_stage_id` FROM `xxgc_task` WHERE `t_status` = 1 ORDER BY t_create_time desc LIMIT 0,10   [ RunTime:0.0009s ]
+
+[ 2017-10-23T22:14:34+08:00 ] 127.0.0.1 /api.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001950s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004841s ]
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Controller\IndexController.class.php 第 112 行.
+SQL: SHOW COLUMNS FROM `xxgc_task` [ RunTime:0.0087s ]
+SQL: SHOW COLUMNS FROM `xxgc_process` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `xxgc_account` [ RunTime:0.0087s ]
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 87 行.
+NOTIC: [8] Undefined index: time_area E:\xampp\htdocs\xinxigongcheng\trunk\application\Api\Event\TaskEvent.class.php 第 88 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_task` WHERE `t_status` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `t_id`,`t_title`,from_unixtime(t_create_time,"%Y-%m-%d") as create_time,`t_stage_id` FROM `xxgc_task` WHERE `t_status` = 1 ORDER BY t_create_time desc LIMIT 0,10   [ RunTime:0.0005s ]
+

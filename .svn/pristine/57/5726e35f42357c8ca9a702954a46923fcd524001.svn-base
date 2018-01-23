@@ -1,0 +1,49 @@
+<tc_include file="Common:head" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/supersized.css" />
+<body>
+<div class="aui-content login-content">
+    <h1 class="aui-margin-l-15 aui-margin-r-15">{$title}</h1>
+    <ul class="aui-list aui-form-list aui-margin-l-15 aui-margin-r-15">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                   <i class="aui-iconfont aui-icon-phone"></i>
+                </div>
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="请输入手机号码" class="mob" maxlength="11">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item ys-code-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                   <i class="aui-iconfont aui-icon-lock"></i>
+                </div>
+                <div class="aui-list-item-input">
+                    <input type="tel" placeholder="请输入验证码" class="verify" maxlength="6">
+                    <button class="get-verify-btn">获取验证码</button>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="aui-btn aui-btn-primary aui-btn-block next-btn">
+        下一步
+    </div>
+    <input type="hidden" value="{$enter_type}" class="type" />
+    <input type="hidden" value="{$nick_name}" class="name" />
+    <input type="hidden" value="{$wechat_openid}" class="openid" />
+    <input type="hidden" class="localStorage-url" value="__ROOT__/application/Html/Dist/images/" />
+</div>
+</body>
+<tc_include file="Common:script" />
+<script type="text/javascript">
+var loginBgUrl = $('.localStorage-url').val();
+</script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/supersized.3.2.7.min.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/supersized-init.js" ></script>
+<script type="text/javascript">
+var type = $('.type').val();  
+var nextUrl = "{:U('Index/verify')}";
+Employeelogin.init();
+</script>
+</html>

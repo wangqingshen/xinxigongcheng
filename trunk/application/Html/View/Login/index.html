@@ -1,0 +1,51 @@
+<tc_include file="Common:head" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/supersized.css" />
+<body>
+<div class="aui-content login-content aui-hide">
+	<ul class="aui-list aui-form-list aui-margin-l-15 aui-margin-r-15">
+		<li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                   <i class="aui-iconfont aui-icon-my"></i>
+                </div>
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="请输入用户名" class="username">
+                </div>
+            </div>
+        </li>
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                   <i class="aui-iconfont aui-icon-lock"></i>
+                </div>
+                <div class="aui-list-item-input">
+                    <input type="password" placeholder="请输入登录密码" class="userpwd">
+                </div>
+            </div>
+        </li>
+	</ul>
+	<div class="aui-btn aui-btn-primary aui-btn-block login-btn">
+		登录
+	</div>
+    <input type="hidden" class="localStorage-url" value="__ROOT__/application/Html/Dist/images/" />
+</div>
+</body>
+<tc_include file="Common:script" />
+<script type="text/javascript">
+var loginBgUrl = $('.localStorage-url').val();
+</script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/supersized.3.2.7.min.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/supersized-init.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/md5.js" ></script>
+<script type="text/javascript">
+var id = localStorage.user_id;
+var taskUrl = "{:U('tasklist/index')}";
+if(id == undefined) {
+    $('.login-content').removeClass('aui-hide');
+    Login.init();
+} else {
+    window.location.href = taskUrl;
+}
+
+</script>
+</html>

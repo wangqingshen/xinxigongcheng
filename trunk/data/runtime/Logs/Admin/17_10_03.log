@@ -1,0 +1,728 @@
+[ 2017-10-03T22:40:18+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:40:20+08:00 ] 127.0.0.1 /index.php?s=/Admin/menu/add
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:41:30+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002132s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000665s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005157s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001760s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001815s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0027s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0026s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Index' AND `action` = 'index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `parentid` FROM `xxgc_menu` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xxgc_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('0','账户管理','Admin','Index','index','','user','','1','1') [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/index/index' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `xxgc_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('admin/index/index','Admin','admin_url','账户管理') [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0010s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:41:30+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:41:38+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:41:44+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/listorders
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001422s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002866s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001677s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001746s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0026s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0038s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 222 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 109 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 110 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 111 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 112 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 113 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 114 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 115 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 116 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 117 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 118 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 119 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 120 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 121 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 122 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 123 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 124 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 125 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 126 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 127 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 128 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 166 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 129 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 130 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 156 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 157 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 167 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 168 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 131 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='10' WHERE `id` = 132 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 140 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 141 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 142 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 143 [ RunTime:0.0009s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 144 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 145 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 146 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 147 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 148 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 149 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 160 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 161 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 150 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 151 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 152 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 153 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 154 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='20' WHERE `id` = 85 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 100 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 101 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 102 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 103 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 174 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 175 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 176 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 177 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 104 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 105 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 106 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 107 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 108 [ RunTime:0.0002s ]
+
+[ 2017-10-03T22:41:44+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:41:59+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:42:18+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/140
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:42:30+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001452s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003587s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001842s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001898s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0028s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `id` = 140 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Rbac' AND `action` = 'index' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `xxgc_menu` SET `parentid`='222',`name`='角色管理',`app`='Admin',`model`='Rbac',`action`='index',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 140 [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/rbac/index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_auth_rule` SET `name`='admin/rbac/index',`module`='Admin',`type`='admin_url',`title`='角色管理' WHERE `name` = 'admin/rbac/index' [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0008s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:42:30+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/140
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:42:50+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:43:35+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/140
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:43:45+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001525s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003198s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.003846s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.003998s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0027s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `id` = 140 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Rbac' AND `action` = 'index' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `xxgc_menu` SET `parentid`='132',`name`='角色管理',`app`='Admin',`model`='Rbac',`action`='index',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 140 [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/rbac/index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_auth_rule` SET `name`='admin/rbac/index',`module`='Admin',`type`='admin_url',`title`='角色管理' WHERE `name` = 'admin/rbac/index' [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0010s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:43:45+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/140
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:44:41+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:44:45+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add/parentid/222
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:48:42+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000879s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003446s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005930s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002294s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002347s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0027s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Index' AND `action` = 'index' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-10-03T22:48:53+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:48:57+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:49:07+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/222
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:49:22+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:49:23+08:00 ] 127.0.0.1 /index.php?s=/Admin/menu/add
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:49:35+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:49:47+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/132
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:49:57+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001890s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003704s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002658s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002822s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0028s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `id` = 132 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `xxgc_menu` WHERE `app` = 'User' AND `model` = 'Indexadmin' AND `action` = 'default' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `xxgc_menu` SET `parentid`='222',`name`='权限管理',`app`='User',`model`='Indexadmin',`action`='default',`data`='',`icon`='group',`remark`='',`status`='1',`type`='1' WHERE `id` = 132 [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'user/indexadmin/default' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_auth_rule` SET `name`='user/indexadmin/default',`module`='User',`type`='admin_url',`title`='权限管理' WHERE `name` = 'user/indexadmin/default' [ RunTime:0.0010s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'User' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0003s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:49:57+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/132
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:50:41+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:50:46+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/149
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:50:52+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001285s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002724s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.004371s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.004673s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0030s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `id` = 149 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'User' AND `action` = 'index' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `xxgc_menu` SET `parentid`='132',`name`='系统管理员',`app`='Admin',`model`='User',`action`='index',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 149 [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/user/index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_auth_rule` SET `name`='admin/user/index',`module`='Admin',`type`='admin_url',`title`='系统管理员' WHERE `name` = 'admin/user/index' [ RunTime:0.0012s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0016s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:50:52+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/149
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:52:49+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:53:01+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add/parentid/222
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:53:44+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001392s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002981s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001803s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001849s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0031s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0045s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Account' AND `action` = 'city_account_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `parentid` FROM `xxgc_menu` WHERE `id` = 222 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xxgc_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('222','市级账户','Admin','Account','city_account_index','','','','1','1') [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/account/city_account_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `xxgc_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('admin/account/city_account_index','Admin','admin_url','市级账户') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0009s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:53:44+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:53:50+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:53:57+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/listorders
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001977s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003845s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001928s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001966s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0037s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0026s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 109 [ RunTime:0.0004s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 110 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 111 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 112 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 113 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 114 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 115 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 116 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 117 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 118 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 119 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 120 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 121 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 122 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 123 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 124 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 125 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 126 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 127 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 128 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 166 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 129 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 130 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 156 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 157 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 167 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 168 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 131 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='20' WHERE `id` = 85 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 100 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 101 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 102 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 103 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 174 [ RunTime:0.0009s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 175 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 176 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 177 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 104 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 105 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 106 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 107 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 108 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 222 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 223 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 132 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 140 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 141 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 142 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 143 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 144 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 145 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 146 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 147 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 148 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 149 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 160 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 161 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 150 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 151 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 152 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 153 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 154 [ RunTime:0.0002s ]
+
+[ 2017-10-03T22:53:57+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:54:03+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add/parentid/222
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:54:49+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001310s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002750s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002760s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002853s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0030s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Account' AND `action` = 'county_account_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `parentid` FROM `xxgc_menu` WHERE `id` = 222 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xxgc_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('222','区县账户','Admin','Account','county_account_index','','','','1','1') [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/account/county_account_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `xxgc_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('admin/account/county_account_index','Admin','admin_url','区县账户') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0011s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:54:49+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:54:52+08:00 ] 127.0.0.1 /index.php?s=/Admin/menu/add
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:55:49+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001369s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002871s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.003531s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.003620s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0035s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0026s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Account' AND `action` = 'relevant_account_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `parentid` FROM `xxgc_menu` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xxgc_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('0','相关账户','Admin','Account','relevant_account_index','','','','1','1') [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/account/relevant_account_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `xxgc_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('admin/account/relevant_account_index','Admin','admin_url','相关账户') [ RunTime:0.0003s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0011s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:55:49+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:55:55+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:56:03+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/225
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:56:23+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001383s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002943s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001819s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001871s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0043s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `id` = 225 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Account' AND `action` = 'relevant_account_index' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `xxgc_menu` SET `parentid`='222',`name`='相关账户',`app`='Admin',`model`='Account',`action`='relevant_account_index',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 225 [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/account/relevant_account_index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_auth_rule` SET `name`='admin/account/relevant_account_index',`module`='Admin',`type`='admin_url',`title`='相关账户' WHERE `name` = 'admin/account/relevant_account_index' [ RunTime:0.0011s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0008s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:56:23+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/edit/id/225
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:56:29+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:56:37+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/listorders
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001629s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003183s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002120s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002172s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0027s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0025s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 109 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 110 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 111 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 112 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 113 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 114 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 115 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 116 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 117 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 118 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 119 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 120 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 121 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 122 [ RunTime:0.0004s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 123 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 124 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 125 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 126 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 127 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 128 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 166 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 129 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 130 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 156 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 157 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 167 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 168 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 131 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='20' WHERE `id` = 85 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 100 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 101 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 102 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 103 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 174 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 175 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 176 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 177 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 104 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 105 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 106 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 107 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 108 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 222 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='2' WHERE `id` = 224 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='3' WHERE `id` = 225 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 132 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 140 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 141 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 142 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 143 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 144 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 145 [ RunTime:0.0004s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 146 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 147 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 148 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 149 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 160 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 161 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 150 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 151 [ RunTime:0.0001s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 152 [ RunTime:0.0001s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 153 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 154 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 223 [ RunTime:0.0002s ]
+
+[ 2017-10-03T22:56:37+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:56:44+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:56:46+08:00 ] 127.0.0.1 /index.php?s=/Admin/menu/add
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:57:52+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001426s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002878s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002982s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.003117s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0029s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Activity' AND `action` = 'activity_msg' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `parentid` FROM `xxgc_menu` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xxgc_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('0','活动通知管理','Admin','Activity','activity_msg','','bullhorn','','1','1') [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/activity/activity_msg' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `xxgc_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('admin/activity/activity_msg','Admin','admin_url','活动通知管理') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0010s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:57:52+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:57:56+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/listorders
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001624s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003223s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002017s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002058s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0027s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0045s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='2' WHERE `id` = 226 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 109 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 110 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 111 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 112 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 113 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 114 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 115 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 116 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 117 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 118 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 119 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 120 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 121 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 122 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 123 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 124 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 125 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 126 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 127 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 128 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 166 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 129 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 130 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 156 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 157 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 167 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 168 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 131 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='20' WHERE `id` = 85 [ RunTime:0.0004s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 100 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 101 [ RunTime:0.0004s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 102 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 103 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 174 [ RunTime:0.0003s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 175 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 176 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 177 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 104 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 105 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 106 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 107 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 108 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 222 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 132 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 140 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 141 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 142 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 143 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 144 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 145 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 146 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 147 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 148 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 149 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 160 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 161 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 150 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 151 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 152 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1000' WHERE `id` = 153 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='0' WHERE `id` = 154 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='1' WHERE `id` = 223 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='2' WHERE `id` = 224 [ RunTime:0.0002s ]
+SQL: UPDATE `xxgc_menu` SET `listorder`='3' WHERE `id` = 225 [ RunTime:0.0002s ]
+
+[ 2017-10-03T22:57:56+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:58:10+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:58:16+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add/parentid/226
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2017-10-03T22:58:35+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001602s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003345s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.002333s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.002422s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `xxgc_menu` [ RunTime:0.0031s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `xxgc_auth_rule` [ RunTime:0.0028s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' AND `model` = 'Activity' AND `action` = 'msg_list' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `parentid` FROM `xxgc_menu` WHERE `id` = 226 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\xinxigongcheng\trunk\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `xxgc_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('226','通知列表','Admin','Activity','msg_list','','','','1','1') [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xxgc_auth_rule` WHERE `name` = 'admin/activity/msg_list' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `xxgc_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('admin/activity/msg_list','Admin','admin_url','通知列表') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `xxgc_menu` WHERE `app` = 'Admin' ORDER BY `listorder` ASC,`app` ASC,`model` ASC,`action` ASC  [ RunTime:0.0013s ]
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\xinxigongcheng\trunk\application\Admin\Controller\MenuController.class.php 第 247 行.
+
+[ 2017-10-03T22:58:36+08:00 ] 127.0.0.1 /index.php?s=/Admin/Menu/index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+

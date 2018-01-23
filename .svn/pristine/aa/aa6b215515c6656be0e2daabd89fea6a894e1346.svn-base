@@ -1,0 +1,32 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Activity/msg_list')}">通知列表</a></li>
+			<li class="active"><a href="#">通知详情</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<tr>
+				<td>发送时间</td>
+				<td>{$msg_info.create_time}</td>
+			</tr>
+			<tr>
+				<td>通知类型</td>
+				<td>{$msg_info.msg_type}</td>
+			</tr>
+			<tr>
+				<td>接收方</td>
+				<td>{$msg_info.am_receiver}</td>
+			</tr>
+			<tr>
+				<td>通知内容</td>
+				<td>{$msg_info.am_content}</td>
+			</tr>
+		</table>
+		<div>
+			<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+		</div>
+	</div>
+</body>
+</html>

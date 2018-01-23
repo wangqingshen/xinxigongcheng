@@ -1,0 +1,7 @@
+    <footer class="aui-bar aui-bar-tab" id="footer">
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-bar-tab-label fp-btn">确认分配</div>
+        </div>
+    </footer>
+</body>
+</html>

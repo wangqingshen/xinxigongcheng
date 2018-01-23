@@ -1,0 +1,623 @@
+<?php
+namespace Api\Event;
+
+use Think\Log;
+
+class TaskEvent
+{
+    private $_log;//日志对象
+    private $_task_model;
+    private $_process_model;
+    private $_account_model;
+    private $_task_type;
+
+    private $_stage;
+    private $_status;
+    /*日志常量*/
+    const INFO = 'INFO';  // 流水日志
+    const ERR = 'ERR';  // 一般错误
+    const LOG_FILE = 5;
+    public function __construct()
+    {
+        $this->_log = new Log();
+        $this->_stage = C('stage');
+        $this->_status = C('task_status');
+        $this->_task_type = C('task_type');
+
+        $this->_task_model = D('Task');
+        $this->_process_model = D('Process');
+        $this->_account_model = D('Account');
+    }
+
+    /**
+     * 函数用途描述:任务相关全局参数
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool
+     */
+    public function task_global_params($data, &$result = null){
+        $result['task_type'] = C('task_type');
+        $result['stage'] = C('stage');
+        $result['account_type'] = C('account_type');
+        return true;
+    }
+    /**
+     * 函数用途描述:管理员新建任务
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function create_task($data, &$result = null){
+        $params = array('title','content','task_type','user_id','process');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $task_data = array(
+            't_create_time' => time(),
+            't_title'   => $data['title'],
+            't_content' => $data['content'],
+            't_type'    => $data['task_type'],
+            'user_id'   => $data['user_id'],
+            't_status'  => 1
+        );
+        //判断任务是否有提交图片
+        if(!empty($data['task_img'])){
+            $img_path = base64img_to_save($data['task_img'],C('UPLOADPATH').'task/',$data['user_id']);
+            if($img_path === false){
+                return 10100;
+            }
+            $task_data['t_img'] = $img_path;
+        }
+        $task_id = 0;
+        $ret = $this->_task_model->create_task($task_data,$data['process'],$task_id,$msg);
+        if($ret !== true){
+            $this->_log->write_array(null,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return $ret;
+        }
+        $result = array(
+            'task_id' => $task_id
+        );
+        return true;
+    }
+
+    /**
+     * 函数用途描述:管理员任务列表
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function a_task_list($data, &$result = null){
+        $params = array('type','page','page_size');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $type = $data['type'];
+        $condition = array(
+            't_status' => 1
+        );
+        $time_area[] = array('EGT',$data['time_area']['start_time']);
+        $time_area[] = array('ELT',$data['time_area']['end_time']);
+        switch ($type){
+            case 1:
+                $condition['t_create_time'] = $time_area;
+                break;
+            case 2:
+                $condition['t_type'] = $data['task_type'];
+                break;
+            case 3:
+                $condition['t_stage_id'] = $data['stage_id'];
+                break;
+        }
+        //统计任务总数
+        $count = 0;
+        $ret = $this->_task_model->count_task($condition,$count,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        //获取任务列表
+        $task_list = array();
+        $field = 't_id,t_title,from_unixtime(t_create_time,"%Y-%m-%d") as create_time,t_stage_id';
+        $order = 't_create_time desc';
+        //计算偏移量
+        $page = $data['page'];
+        $page_size = $data['page_size'];
+        $offset = ($page-1)*$page_size;
+        $ret = $this->_task_model->get_task_list($condition,$field,$order,$offset,$page_size,$task_list,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        //获取任务当前阶段
+        foreach ($task_list as $key => $value){
+            $task_list[$key]['stage_name'] = $this->_stage[$value['t_stage_id']];
+        }
+        $result['count'] = $count;
+        $result['list'] = $task_list;
+        return true;
+    }
+
+    /**
+     * 函数用途描述:任务审核列表
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function task_examine_list($data, &$result = null){
+        $params = array('page','page_size');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $condition = array(
+            't_status' => array('in','2,3,4,5,6')
+        );
+        //统计任务总数
+        $count = 0;
+        $ret = $this->_task_model->count_task($condition,$count,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        //获取任务列表
+        $task_list = array();
+        $field = 't_id,t_title,from_unixtime(t_create_time,"%Y-%m-%d") as create_time,t_status';
+        $order = "FIELD(t_status,2,3,6,4,5),t_create_time desc";
+        //计算偏移量
+        $page = $data['page'];
+        $page_size = $data['page_size'];
+        $offset = ($page-1)*$page_size;
+        $ret = $this->_task_model->get_task_list($condition,$field,$order,$offset,$page_size,$task_list,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        foreach ($task_list as $key => $value){
+            $task_list[$key]['task_status'] = $this->_status[$value['t_status']];
+            unset($task_list[$key]['t_status']);
+        }
+        $result['count'] = $count;
+        $result['list'] = $task_list;
+        return true;
+    }
+
+    /**
+     * 函数用途描述:任务审核详情页
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function get_task_examine_info($data, &$result = null){
+        $params = array('task_id');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $task_id = $data['task_id'];
+        $task_info = array();
+        $ret = $this->_task_model->get_task_info_by_id($task_id,$task_info,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        //处理给到接口的任务内容
+        $result['title'] = $task_info['t_title'];
+        $result['content'] = $task_info['t_content'];
+        $result['status'] = $task_info['t_status'];
+        $result['task_img'] = $task_info['t_img'];
+        $result['task_examine_explain'] = $task_info['t_examine_explain'];
+        $result['process_id'] = $task_info['p_id'];
+        //获取任务当前的阶段
+//        $stage_id = $task_info['t_stage_id'];
+        $stage_condition = array(
+            't_id' => $task_info['t_id'],
+        );
+        $process_list = array();
+        $ret = $this->_process_model->get_p_list_by_condition($stage_condition,$process_list,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        $result['process'] = array();
+        foreach ($process_list as $key => $value){
+            $result['process'][$key]['stage_name'] = $value['p_id'];
+            $result['process'][$key]['stage_name'] = $value['p_stage_name'];
+            $result['process'][$key]['account_name'] = $value['a_name'];
+            //获取执行人联系方式
+            $account_id = $value['a_id'];
+            $account_info = array();
+            $ret = $this->_account_model->get_account_info_by_id($account_id,$account_info,$msg);
+            if($ret !== true){
+                $result['process'][$key]['mobile'] = '';
+                continue;
+            }
+            $result['process'][$key]['mobile'] = $account_info['a_mobile'];
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:更改订单状态
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function update_task_status($data, &$result = null){
+        $params = array('task_id','examine_explain','status');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $task_id = $data['task_id'];
+        $task_condition = array(
+            't_id' => $task_id
+        );
+        $task_update = array(
+            't_status' => $data['status'],
+            't_examine_explain' => $data['examine_explain']
+        );
+        $ret = $this->_task_model->update_task($task_condition,$task_update,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        //获取任务下所有执行人
+        $process_condition = array(
+            't_id' => $task_id
+        );
+        $process_list = array();
+        $ret = $this->_process_model->get_p_list_by_condition($process_condition,$process_list);
+        if($ret === true){
+            $url = C('DOMAIN').'index.php?s=/Index/index/enter/account';
+            if($data['status'] == 1){
+                $wechat_title = '任务退回';
+                $wechat_content = '任务申请未通过';
+                $status_cn = '未通过';
+            }elseif($data['status'] == 4){
+                $wechat_title = '任务审核完成';
+                $wechat_content = '任务审核已通过';
+                $status_cn = '审核完成';
+            }elseif ($data['status'] == 5){
+                $wechat_title = '任务中止完成';
+                $wechat_content = '任务中止已通过';
+                $status_cn = '任务中止';
+            }
+            foreach ($process_list as $value){
+                $a_id = $value['a_id'];
+                //获取openid
+                $account_info = array();
+                $ret = $this->_account_model->get_account_info_by_id($a_id,$account_info);
+                if($ret === true){
+                    $ret = send_wechat_msg_template(2,$account_info['a_wechat_open_id'],$wechat_title,$wechat_content,$url,$status_cn);
+                    if($ret['errcode'] !== 0){
+                        $msg = '账户为：'.$data['a_name '].',微信消息推送失败。';
+                        $this->_log->write_array($ret,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+                        continue;
+                    }
+                }
+            }
+
+        }
+
+        return true;
+    }
+
+    /**
+     * 函数用途描述:获取账户任务列表
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function account_task_list($data, &$result = null){
+        $params = array('account_id','type','page','page_size');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $type = $data['type'];
+        $account_id = $data['account_id'];
+        if($type == 1){
+            $status = '1,2,3';
+        }elseif ($type == 2){
+            $status = '4,5';
+        }
+        //计算偏移量
+        $page = $data['page'];
+        $page_size = $data['page_size'];
+        $offset = ($page-1)*$page_size;
+
+        $task_list = array();
+        $count_task = 0;
+        $ret = $this->_process_model->get_process_task_list($account_id,$status,$offset,$page_size,$task_list,$count_task,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        //根据任务id，获取任务信息
+        $result['list'] = array();
+        foreach ($task_list as $key => $value){
+            $task_id = $value['t_id'];
+            $task_info = array();
+            $ret = $this->_task_model->get_task_info_by_id($task_id,$task_info,$msg);
+            if($ret !== true){
+                $msg = set_err_msg('通过task_id获取任务信息失败。',$ret);
+                $this->_log->write_array('task_id:'.$task_id,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+                continue;
+            }
+            $result['list'][$key]['task_id'] = $task_info['t_id'];
+            $result['list'][$key]['task_title'] = $task_info['t_title'];
+            $result['list'][$key]['create_time'] = date("Y-m-d",$task_info['t_create_time']);
+            $result['list'][$key]['stage'] = $this->_stage[$task_info['t_stage_id']];
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:获取任务详细信息
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function get_account_task_info($data, &$result = null){
+        $params = array('task_id');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $task_id = $data['task_id'];
+        $task_info = array();
+        $ret = $this->_task_model->get_task_info_by_id($task_id,$task_info,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        $result['task_id'] = $task_info['t_id'];
+        $result['task_title'] = $task_info['t_title'];
+        $result['task_content'] = $task_info['t_content'];
+        $result['task_status'] = $task_info['t_status'];
+        $result['task_img'] = $task_info['t_img'];
+        $result['task_examine_plain'] = $task_info['t_examine_explain'];
+        $result['account_id'] = $task_info['a_id'];
+        $result['now_process_id'] = $task_info['p_id'];
+        //获取流程信息
+        $process_condition = array(
+            't_id' => $task_info['t_id']
+        );
+        $process_list = array();
+        $ret = $this->_process_model->get_p_list_by_condition($process_condition,$process_list,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        foreach ($process_list as $key => $value){
+            if($value['p_start_time'] == 0){
+                $start_time = 0;
+            }else{
+                $start_time = date("Y-m-d",$value['p_start_time']);
+            }
+            $result['process_list'][$key]['process_id'] = $value['p_id'];
+            $result['process_list'][$key]['stage_id'] = $value['p_stage_id'];
+            $result['process_list'][$key]['stage_name'] = $value['p_stage_name'];
+            $result['process_list'][$key]['start_time'] = $start_time;
+            $result['process_list'][$key]['account_name'] = $value['a_name'];
+            $result['process_list'][$key]['account_id'] = $value['a_id'];
+            $result['process_list'][$key]['img'][0] = $value['p_img_0'];
+            $result['process_list'][$key]['img'][1] = $value['p_img_1'];
+            $result['process_list'][$key]['img'][2] = $value['p_img_2'];
+            $result['process_list'][$key]['img'][3] = $value['p_img_3'];
+            $result['process_list'][$key]['img'][4] = $value['p_img_4'];
+            $result['process_list'][$key]['img'][5] = $value['p_img_5'];
+            $result['process_list'][$key]['img'][6] = $value['p_img_6'];
+            $result['process_list'][$key]['img'][7] = $value['p_img_7'];
+            $result['process_list'][$key]['img'][8] = $value['p_img_8'];
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:上传流程图片
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function update_process_imgs($data, &$result = null){
+        $params = array('process_id','account_id','imgcodes');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $process_id = $data['process_id'];
+        $account_id = $data['account_id'];
+        $imgcodes = $data['imgcodes'];
+        $save_path = C('UPLOADPATH').'account/';
+        $img_update = array();
+        foreach ($imgcodes as $key => $value){
+            $img_update['p_img_'.$key] = base64img_to_save($value,$save_path,$account_id);
+        }
+        //将上传的图片地址更新到数据库
+        $condition = array(
+            'p_id' => $process_id
+        );
+        $ret = $this->_process_model->update_process($condition,$img_update,$msg);
+        if($ret !== true){
+            return $ret;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:流程流转
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function process_next($data, &$result = null){
+        $params = array('process_id','task_id');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $task_id = $data['task_id'];
+        $process_id = $data['process_id'];
+        //更新流程信息
+        $ret = $this->_process_model->process_flow($process_id,$task_id);
+        if($ret !== true){
+            return $ret;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:申请任务审核或者申请任务中止
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function apply_examine_task($data, &$result = null){
+        $params = array('process_id','task_id','examine_content','type');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        M()->startTrans();
+        //更新流程状态
+        $process_condition = array(
+            'p_id' => $data['process_id'],
+        );
+        $process_update = array(
+            'p_finish_time' => time()
+        );
+        $ret = $this->_process_model->update_process($process_condition,$process_update,$msg);
+        if($ret !== true){
+            M()->rollback();
+            return $ret;
+        }
+        //更新任务状态
+        if($data['type'] == 1 ){
+            $status = 2;
+        }elseif ($data['type'] == 2 ){
+            $status = 3;
+        }
+        $task_condition = array(
+            't_id' => $data['task_id'],
+        );
+        $task_update = array(
+            't_status' => $status,
+            't_examine_explain' => $data['examine_content']
+        );
+        $ret = $this->_task_model->update_task($task_condition,$task_update,$msg);
+        if($ret !== true){
+            M()->rollback();
+            return $ret;
+        }
+        M()->commit();
+        return true;
+    }
+
+    /**
+     * 函数用途描述:申请变更执行人
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function change_process_account($data, &$result = null){
+        $params = array('process_id','task_id','examine_content');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        M()->startTrans();
+        //更新任务状态
+        $task_condition = array(
+            't_id' => $data['task_id'],
+        );
+        $task_update = array(
+            't_status' => 6,
+            't_examine_explain' => $data['examine_content']
+        );
+        $ret = $this->_task_model->update_task($task_condition,$task_update,$msg);
+        if($ret !== true){
+            M()->rollback();
+            return $ret;
+        }
+        M()->commit();
+        return true;
+    }
+
+    /**
+     * 函数用途描述:任务执行人变更
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function update_account_status($data, &$result = null){
+        $params = array('task_id','examine_explain','process_id','account_type','account_id','account_name');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        M()->startTrans();
+        //更新流程执行人
+        $process_condition = array(
+            'p_id' => $data['process_id']
+        );
+        $process_update = array(
+            'a_type' => $data['account_type'],
+            'a_id' => $data['account_id'],
+            'a_name' => $data['account_name'],
+            'p_start_time' => time()
+        );
+        $ret = $this->_process_model->update_process($process_condition,$process_update);
+        if($ret !== true){
+            M()->rollback();
+            return $ret;
+        }
+        //更新任务信息
+        $task_condition = array(
+            't_id' => $data['task_id']
+        );
+        $task_update = array(
+            't_status' => 1,
+            'a_id' => $data['account_id'],
+            'a_name' => $data['account_name'],
+            't_examine_explain' => $data['examine_explain']
+        );
+        $ret = $this->_task_model->update_task($task_condition,$task_update);
+        if($ret !== true){
+            M()->rollback();
+            return $ret;
+        }
+        M()->commit();
+        //获取变更后执行人的微信openid
+        $res_account = array();
+        $ret = $this->_account_model->get_account_info_by_id($data['account_id'],$res_account,$msg);
+        if($ret !== true){
+            //因为这里属于不影响流程的错误，只需记录错误日志。
+            $msg = '账户为：'.$data['account_name '].',微信消息推送失败。';
+            $this->_log->write_array($ret,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return true;//无需再执行后面的发送消息
+        }
+        //获取任务信息
+        $task_info = array();
+        $ret = $this->_task_model->get_task_info_by_id($data['task_id'],$task_info,$msg);
+        if($ret !== true){
+            //因为这里属于不影响流程的错误，只需记录错误日志。
+            $this->_log->write_array($ret,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return true;//无需再执行后面的发送消息
+        }
+        //更新成功后，向新的执行人发送微信通知消息
+        $url = C('DOMAIN').'index.php?s=/Index/index/enter/account';
+        $ret = send_wechat_msg_template(2,$res_account['a_wechat_open_id'],'新的任务变更到了您的名下',$task_info['t_title'],$url,$this->_task_type[$task_info['t_type']]);
+        if($ret['errcode'] !== 0){
+            $msg = '账户为：'.$data['a_name '].',微信消息推送失败。';
+            $this->_log->write_array($ret,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+        }
+        return true;
+    }
+
+}

@@ -1,0 +1,38 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U('Activity/msg_list')}">通知列表</a></li>
+			<li><a href="{:U('Activity/send_msg')}">发布通知</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>发送时间</th>
+					<th>通知类别</th>
+					<th>接收人</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="msg_list" id="msg_info">
+				<tr>
+					<td>{$msg_info.am_id}</td>
+					<td>{$msg_info.create_time}</td>
+					<td>{$msg_info.msg_type}</td>
+					<td>{$msg_info.am_receiver}</td>
+
+					<td>
+						<span><a href="{:U('Activity/msg_info')}&msg_id={$msg_info.am_id}">查看</a></span>
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div class="pagination">{$page_show}</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U($account_fun)}">账户类型统计</a></li>
+		</ul>
+		<div>
+			<form id="count_form" method="post" class="form-horizontal" action="{:U('Statistics/account_type')}">
+				<select name="select_time" id="select_time">
+					<volist name="select_time_area" id="time_area">
+						<if condition="$key eq $select_val">
+							<option value="{$key}" selected="selected">{$time_area}</option>
+						<else />
+							<option value="{$key}">{$time_area}</option>
+						</if>
+
+					</volist>
+				</select>
+			</form>
+		</div>
+		<div id="task_type" style="width: 1000px;height:800px;"></div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script src="__PUBLIC__/js/echarts/echarts.min.js"></script>
+	<script type="text/javascript">
+        $(function () {
+			$('#select_time').change(function () {
+				$('#count_form').submit();
+			})
+        	//初始化统计数据
+            var res_count = $.parseJSON('{$res_count}');
+			var task_type_name = [];
+			var task_type_count = [];
+            $.each(res_count,function (k,v) {
+                task_type_name[k] = v.type_name;
+                task_type_count[k] = v.type_count;
+            });
+			// 基于准备好的dom，初始化echarts实例
+			var task_type_echarts = echarts.init(document.getElementById('task_type'));
+
+			// 指定图表的配置项和数据
+			var option = {
+				title: {
+					text: '账户类型统计'
+				},
+				tooltip: {},
+				legend: {
+					data:['任务数']
+				},
+				xAxis: {
+					data: task_type_name
+				},
+				yAxis: {},
+				series: [{
+					name: '任务数',
+					type: 'bar',
+					data: task_type_count
+				}]
+			};
+
+			// 使用刚指定的配置项和数据显示图表。
+			task_type_echarts.setOption(option);
+        });
+	</script>
+</body>
+</html>

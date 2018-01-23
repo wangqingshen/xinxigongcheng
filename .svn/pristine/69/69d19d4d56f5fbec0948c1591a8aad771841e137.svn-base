@@ -1,0 +1,199 @@
+<?php
+namespace Common\Model;
+use Think\Log;
+class AccountModel extends CommonModel{
+    //声明属性
+    private $_log;//日志对象
+    /*日志常量*/
+    const INFO = 'INFO';  // 流水日志
+    const ERR = 'ERR';  // 一般错误
+    const LOG_FILE = 3;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->_log = new Log();//声明日志对象
+    }
+	protected function _before_write(&$data) {
+		parent::_before_write($data);
+	}
+
+    /**
+     * 函数用途描述:根据条件，统计账户数量
+     * @author:risoli
+     * @param null $condition
+     * @param $count
+     * @param $msg
+     * @return bool|int
+     */
+	public function count_account($condition = null,&$count,&$msg){
+	    $count = $this->where($condition)->count();
+        if($count === false){
+            $msg = set_err_msg('统计账户数量失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:创建账户
+     * @author:risoli
+     * @param $data
+     * @param $account_id
+     * @param $msg
+     * @return bool|int
+     */
+    public function create_account($data, &$account_id, &$msg){
+        if( count($data) < 1 ){
+            $msg = set_err_msg('缺少必须参数。',101);
+            return 101;
+        }
+        //step1检测手机号是否已存在
+        $condition = array(
+            'a_mobile' => $data['a_mobile']
+        );
+        $count = 0;
+        $count = $this->where($condition)->count();
+        if($count === false){
+            $msg = set_err_msg('创建时，检测账户是否已创建失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }elseif ($count > 0){
+            $msg = set_err_msg('该手机号码账户已添加。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 10203;
+        }
+        //step2 创建账户
+        $ret = $this->add($data);
+        if($ret === false){
+            $msg = set_err_msg('创建账户信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        $account_id = $ret;
+        return true;
+    }
+
+    /**
+     * 函数用途描述:显示账户列表，并调用系统show方法
+     * @author:risoli
+     * @param null $condition
+     * @param string $field
+     * @param $page
+     * @param null $order
+     * @param $msg
+     */
+    public function get_account_list_show($condition = null, $field = '*', $page, $order = null, &$result, &$msg){
+        $result = $this->field($field)->where($condition)->limit($page->firstRow.','.$page->listRows)->order($order)->select();
+        if($result === false){
+            $msg = set_err_msg('查找账户list失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据账户id获取账户信息
+     * @author:risoli
+     * @param $account_id
+     * @param $account_info
+     * @param $msg
+     * @return bool|int
+     */
+    public function get_account_info_by_id($account_id, &$account_info, &$msg){
+        if(empty($account_id)){
+            $msg = set_err_msg('缺少账户id。',101);
+            return 101;
+        }
+        $condition = array(
+            'a_id' => $account_id
+        );
+        $account_info = $this->where($condition)->find();
+        if($account_info === false){
+            $msg = set_err_msg('查找账户信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据条件更新账户信息
+     * @author:risoli
+     * @param $condition
+     * @param $data
+     * @param $msg
+     * @return bool|int
+     */
+    public function update_account($condition,$data,&$msg){
+        if(count($condition) < 1){
+            $msg = set_err_msg('缺少更新条件',101);
+            return 101;
+        }
+        if(count($data) < 1){
+            $msg = set_err_msg('缺少更新数据',101);
+            return 101;
+        }
+        foreach ($data as $key => $value){
+            if(empty($value)){
+                unset($data[$key]);
+            }
+        }
+        $ret = $this->where($condition)->save($data);
+        if($ret === false){
+            $msg = set_err_msg('更新账户信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据手机号查找账户信息
+     * @author:risoli
+     * @param $mobile
+     * @param $account_info
+     * @param $msg
+     * @return int
+     */
+    public function get_account_by_mobile($mobile,&$account_info,&$msg){
+        if(empty($mobile)){
+            $msg = set_err_msg('缺少手机号。',104);
+            return 101;
+        }
+        $condition = array(
+            'a_mobile' => $mobile
+        );
+        $account_info = $this->where($condition)->find();
+        if($account_info === false){
+            $msg = set_err_msg('查找账户信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据条件获取账户信息
+     * @author:risoli
+     * @param $condition
+     * @param $account_list
+     * @param $msg
+     * @return bool|int
+     */
+    public function get_account_by_condition($condition,$field,&$account_list,&$msg){
+        $account_list = $this->field($field)->where($condition)->select();
+        if($account_list === false){
+            $msg = set_err_msg('查找账户信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+
+
+
+}

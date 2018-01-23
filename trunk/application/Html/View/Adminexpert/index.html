@@ -1,0 +1,36 @@
+<tc_include file="Common:head" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/aui/aui-pull-refresh.css" />
+<body>
+<div class="aui-refresh-content answer-content">
+    <ul class="aui-list aui-media-list" style="background: 0;">
+
+    </ul>
+</div>
+<div class="copy-content aui-hide">
+<li class="aui-list-item aui-list-item-arrow">
+    <div class="aui-media-list-item-inner">
+        <div class="aui-list-item-inner">
+            <div class="aui-list-item-text">
+                <div class="aui-list-item-title">
+                    <span class="answer-title aui-ellipsis-1"></span>
+                    <span class="answer-news aui-ellipsis-1" style="display: block; font-size: 12px; font-weight: 400;color: #6e6e6e;"></span>
+                </div>
+                <div class="aui-list-item-right">
+                    <span class="answer-date"></span>
+                    <span class="answer-status"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+</div>
+<input type="hidden" name="footerActive" value="3" />
+<tc_include file="Common:script" />
+<tc_include file="Common:footer" />
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/aui/aui-scroll.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/aui/aui-pull-refresh.js"></script>
+<script type="text/javascript">
+var detailUrl = "{:U('Adminexpert/detail')}";
+AdminExpert.init();
+</script>
+</body>

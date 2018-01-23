@@ -1,0 +1,56 @@
+<tc_include file="Common:head" />
+<link rel="stylesheet" type="text/css" href="__ROOT__/application/Html/Dist/css/dialog.css" />
+<body>
+<div class="aui-content newtask-content">
+	<ul class="aui-list aui-media-list"> 
+        <li class="aui-list-item">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media">
+                    开始时间
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title">
+                        </div>
+                        <div class="aui-list-item-right" style="max-width: 100%;margin-top: 3px;">
+                            <span class="startDate" id="startDate">请选择</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+         <li class="aui-list-item">
+            <div class="aui-media-list-item-inner">
+                <div class="aui-list-item-media">
+                    结束时间
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-text">
+                        <div class="aui-list-item-title">
+                        </div>
+                        <div class="aui-list-item-right" style="max-width: 100%;margin-top: 3px;">
+                            <span class="endDate" id="endDate">请选择</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+	<div class="btns-wrapper">
+        <button class="search-btn">查询</button>
+    </div>
+</div>
+<input type="hidden" name="footerActive" value="0" />
+<tc_include file="Common:script" />
+<tc_include file="Common:footer" />
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/dialog.js" ></script>
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/mobile-select-date.js" ></script>
+<script type="text/javascript">
+	var searchUrl = "{:U('tasklist/index')}";
+	var selectStartDate = new MobileSelectDate();
+	selectStartDate.init({trigger:'#startDate',min:'2017/07/20',max:'2027/07/20',position:"bottom"});
+	var selectEndDate = new MobileSelectDate();
+	selectEndDate.init({trigger:'#endDate',min:'2017/11/10',max:'2027/07/20',position:"bottom"});
+	DateSearch.init();
+</script>
+</body>

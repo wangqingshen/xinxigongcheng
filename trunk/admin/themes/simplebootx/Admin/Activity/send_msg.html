@@ -1,0 +1,155 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Activity/msg_list')}">通知列表</a></li>
+			<li class="active"><a href="{:U('Activity/send_msg')}">发布通知</a></li>
+		</ul>
+		<!--<form id="activity_form" method="post" class="form-horizontal js-ajax-form" action="{:U('Activity/send_msg_post')}">
+		-->
+		<form id="activity_form" method="post" class="form-horizontal js-ajax-form">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">通知内容：</label>
+					<div class="controls">
+						<textarea name="msg_content" id="msg_content"></textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">通知类型：</label>
+					<div class="controls">
+						<select name="select_msg_type" id="select_msg_type">
+							<option value="">请选择</option>
+							<option value="1">个人</option>
+							<option value="2">账户</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group" id="div_msg_for_single" style="display: none">
+					<label class="control-label">手机号：</label>
+					<div class="controls">
+						<input type="text" name="msg_for_single" id="msg_for_single" value="" />
+					</div>
+				</div>
+				<div class="control-group" id="div_select_account_type" style="display: none">
+					<label class="control-label">指定账户：</label>
+					<div class="controls">
+						<select name="select_account_type" id="select_account_type">
+							<option value="">请选择</option>
+							<option value="1">市级账户</option>
+							<option value="2">区县账户</option>
+							<option value="3">相关账户</option>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">查看链接：</label>
+					<div class="controls">
+						<select name="select_internet" id="select_internet" style="width: 90px">
+							<option value="http://">http://</option>
+							<option value="https://">https://</option>
+						</select>&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="text" name="website_url" id="website_url" value=""/>
+					</div>
+				</div>
+
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" id="btn_submit" class="btn btn-primary js-ajax-submit">发送</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+<script src="__PUBLIC__/js/validate.js"></script>
+<script src="__PUBLIC__/js/ajaxForm.js"></script>
+<script src="__PUBLIC__/js/layer/layer.js"></script>
+<script>
+	$(function () {
+		$('#select_msg_type').change(function () {
+		    if($(this).val() == 1){
+		        $('#div_msg_for_single').show();
+                $('#div_select_account_type').hide();
+			}else if($(this).val() == 2){
+                $('#div_msg_for_single').hide();
+                $('#div_select_account_type').show();
+			}
+        });
+
+		$.validator.addMethod('check_msg_single',function (value,element) {
+			if($('#select_msg_type').val() == 1){
+			    if(value.length < 1){
+			        return false;
+				}
+			}
+			return true;
+        },"<span style='color: red'>指定发送人手机号不能为空</span>");
+        $.validator.addMethod('check_account_type',function (value,element) {
+            if($('#select_msg_type').val() == 2){
+                if(value == ''){
+                    return false;
+                }
+            }
+            return true;
+        },"<span style='color: red'>请选择发送账号</span>");
+
+		$('#activity_form').validate({
+			rules:{
+                msg_content:{
+				    required:true,
+					maxlength:120
+				},
+                select_msg_type:{
+                    required:true
+				},
+                msg_for_single:{
+                    check_msg_single:true,
+					number:true
+				},
+                select_account_type:{
+                    check_account_type:true
+				}
+			},
+			messages:{
+                msg_content:{
+			        required:"<span style='color: red'>发送内容不能为空</span>",
+					maxlength:"<span style='color: red'>发送内容不能超过120字</span>"
+				},
+                select_msg_type:{
+                    required:"<span style='color: red'>请选择通知类型</span>"
+                },
+                msg_for_single:{
+                    number:"<span style='color: red'>请输入正确的手机号</span>"
+				}
+			},
+			submitHandler:function (form) {
+				$(form).ajaxSubmit({
+				    type:"post",
+					url:"{:U('Activity/send_msg_post')}",
+                    beforeSubmit:open_layer('信息正在发送中，请耐心等候.....'),
+					success:function (data) {
+						var json = $.parseJSON(data);
+						if(json.errcode !== 1){
+                            open_layer(json.errmsg);
+						}else{
+						    alert(json.errmsg);
+                            location.reload();
+						}
+                    }
+				});
+				return false;
+            }
+		});
+
+		function open_layer(content) {
+			layer.open({
+			    type:0,
+				content:content
+			});
+        }
+
+    })
+
+</script>

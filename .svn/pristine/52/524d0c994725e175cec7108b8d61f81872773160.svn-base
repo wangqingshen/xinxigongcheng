@@ -1,0 +1,21 @@
+[ 2017-10-04T14:21:39+08:00 ] 127.0.0.1 /index.php?s=/Admin/public/dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000537s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001128s ]
+INFO: Run Common\Behavior\UrldecodeGetBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002617s ]
+INFO: [ admin_begin ] --START--
+INFO: Run Common\Behavior\AdminDefaultLangBehavior [ RunTime:0.001530s ]
+INFO: [ admin_begin ] --END-- [ RunTime:0.001567s ]
+SQL: SHOW COLUMNS FROM `xxgc_users` [ RunTime:0.0358s ]
+SQL: SELECT * FROM `xxgc_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `xxgc_role_user` [ RunTime:0.0113s ]
+SQL: SELECT `role_id` FROM xxgc_role_user a INNER JOIN xxgc_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0011s ]
+SQL: UPDATE `xxgc_users` SET `user_login`='admin',`user_pass`='###8672413f2ac72ea28c5b2ad70d8f9b26',`user_nicename`='admin',`user_email`='aa@dd.com',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`='2000-01-01',`signature`=NULL,`last_login_ip`='127.0.0.1',`last_login_time`='2017-10-04 14:21:39',`create_time`='2017-06-25 02:40:11',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='' WHERE `id` = '1' [ RunTime:0.0003s ]
+
+[ 2017-10-04T14:21:43+08:00 ] 127.0.0.1 /index.php?s=/Admin/Account/county_account_index
+ERR: 无法加载控制器:Account
+
+[ 2017-10-04T14:21:43+08:00 ] 127.0.0.1 /index.php?s=/Admin/Account/city_account_index
+ERR: 无法加载控制器:Account
+

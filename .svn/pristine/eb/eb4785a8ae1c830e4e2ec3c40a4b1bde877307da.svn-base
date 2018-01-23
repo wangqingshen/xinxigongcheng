@@ -1,0 +1,88 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:U($account_fun)}">账户列表</a></li>
+			<li><a href="{:U('Account/add_account',array('account_type'=>$account_type))}">{$add_account_cn}</a></li>
+		</ul>
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th>手机号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<if condition="$account_type eq 4">
+						<th>专家类型</th>
+					<else />
+						<th>部门</th>
+					</if>
+					<th>状态</th>
+					<th>微信昵称</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="account_list" id="account_info">
+				<tr>
+					<td>{$account_info.a_mobile}</td>
+					<td>{$account_info.a_name}</td>
+					<td>{$account_info.a_sex_cn}</td>
+					<if condition="$account_type eq 4">
+						<td>{$account_info.a_expert_cn}</td>
+						<else />
+						<td>{$account_info.a_dep_cn}</td>
+					</if>
+					<td>{$account_info.status_cn}</td>
+					<td>{$account_info.a_wechat_open_id}</td>
+					<td>
+						<span><a href="{:U('Account/edit_account')}&account_id={$account_info.a_id}&account_type={$account_type}">编辑</a></span>
+						<if condition="$account_info.status eq 3">
+							<span><a onclick="lock_account({$account_info.a_id},'{$account_info.a_name}',2)" href="#">启动</a></span>
+						<else />
+							<span><a onclick="lock_account({$account_info.a_id},'{$account_info.a_name}',3)" href="#">冻结</a></span>
+						</if>
+					</td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+		<div class="pagination">{$page_show}</div>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script src="__PUBLIC__/js/layer/layer.js"></script>
+	<script>
+		function lock_account(account_id,account_name,type){
+			var url = "{:U('Account/lock_account')}&account_id="+account_id+"&type="+type;
+			var str = '';
+			if(type == 3){
+			    str = '确认冻结【'+account_name+'】账户？';
+			}else {
+                str = '确认启动【'+account_name+'】账户？'
+			}
+			layer.confirm(str,{
+			    btn:['确认','取消'],
+				yes:function (index,layero) {
+                    $.ajax({
+                        url:url,
+                        success:function(data){
+                            if(data.errcode == 1){
+                                alert(data.msg);
+                                layer.close(index);
+                            }else{
+                                alert(data.msg);
+                                return;
+                            }
+                            location.reload();
+                        }
+                    });
+                },
+				btn2:function(index,layero){
+			        layer.close(index);
+				}
+			});
+		}
+
+	</script>
+</body>
+</html>

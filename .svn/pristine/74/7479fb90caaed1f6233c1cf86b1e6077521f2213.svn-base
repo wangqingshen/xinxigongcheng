@@ -1,0 +1,268 @@
+<?php
+namespace Common\Model;
+use Think\Log;
+class ProcessModel extends CommonModel{
+    //声明属性
+    private $_log;//日志对象
+    /*日志常量*/
+    const INFO = 'INFO';  // 流水日志
+    const ERR = 'ERR';  // 一般错误
+    const LOG_FILE = 3;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->_log = new Log();//声明日志对象
+    }
+	protected function _before_write(&$data) {
+		parent::_before_write($data);
+
+	}
+    /**
+     * 函数用途描述:创建全部流程
+     * @author:risoli
+     * @param $data
+     * @param $task_id
+     * @param $msg
+     * @return bool|int
+     */
+    public function create_all_process($data, &$msg){
+        $ret = $this->addAll($data);
+        if($ret === false){
+            $this->rollback();
+            $msg = set_err_msg('创建任务信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据条件获取流程list
+     * @author:risoli
+     * @param $condition
+     * @param $p_list
+     * @param $msg
+     * @return bool|int
+     */
+    public function get_p_list_by_condition($condition,&$p_list,&$msg){
+        if(count($condition)<1){
+            $msg = set_err_msg('缺少查询条件。',101);
+            return 101;
+        }
+        $p_list = $this->where($condition)->order('p_id asc')->select();
+        if($p_list === false){
+            $msg = set_err_msg('获取流程list失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据条件获取属于账户下的任务数量
+     * @author:risoli
+     * @param $condition
+     * @param $count
+     * @param $msg
+     * @return bool|int
+     */
+    public function count_account_task($condition,&$count,&$msg){
+        $count = $this->where($condition)->group('t_id')->count();
+        if($count === false){
+            $msg = set_err_msg('统计账户任务数失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:获取流程list，并去重
+     * @author:risoli
+     * @param null $condition
+     * @param string $field
+     * @param null $order
+     * @param null $offset
+     * @param $num
+     * @param $process_list
+     * @param $msg
+     * @return bool|int
+     */
+    public function get_process_list($condition = null, $field = '*', $order=null, $offset = null, $num, &$process_list, &$msg){
+        if( count($condition) < 1 ){
+            $msg = set_err_msg('缺少必须参数。',101);
+            return 101;
+        }
+        $process_list = $this->where($condition)->limit($offset, $num)->order($order)->field($field)->select();
+        if($process_list === false){
+            $msg = set_err_msg('查找流程list失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据账户id和任务状态，获取账户任务list
+     * @author:risoli
+     * @param $account_id
+     * @param $status
+     * @param $offset
+     * @param $num
+     * @param $task_list
+     * @param $count
+     * @param $msg
+     * @return bool|int
+     */
+    public function get_process_task_list($account_id,$status,$offset,$num,&$task_list,&$count,&$msg){
+        $join = "__TASK__ ON p.t_id = __TASK__.t_id and __TASK__.t_status in ($status) ";
+        $condition = array(
+            'p.a_id' => $account_id
+        );
+        //统计总数
+        $count = $this->alias('p')
+            ->join($join)
+            ->group('p.t_id')
+            ->where($condition)
+            ->count();
+        if($count === false){
+            $msg = set_err_msg('统计账户任务失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        $task_list = $this->alias('p')
+            ->join($join)
+            ->group('p.t_id')
+            ->where($condition)
+            ->limit($offset, $num)
+            ->select();
+        if($task_list === false){
+            $msg = set_err_msg('获取账户任务list失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:根据条件更新流程信息
+     * @author:risoli
+     * @param $condition
+     * @param $data
+     * @param $msg
+     * @return bool|int
+     */
+    public function update_process($condition,$data,&$msg){
+        if(count($condition) < 1){
+            $msg = set_err_msg('缺少更新条件。',101);
+            return 101;
+        }
+        if(count($data) < 1){
+            $msg = set_err_msg('缺少更新数据。',101);
+            return 101;
+        }
+        $ret = $this->where($condition)->save($data);
+        if($ret === false){
+            $msg = set_err_msg('更新流程信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:流程流转
+     * @author:risoli
+     * @param $process_id
+     * @param $task_id
+     * @param $msg
+     * @return bool
+     */
+    public function process_flow($process_id,$task_id,&$msg){
+        if(empty($process_id)){
+            $msg = set_err_msg('缺少更新数据。',101);
+            return 101;
+        }
+        $process_list = array();
+        $condition = array(
+            't_id' => $task_id
+        );
+        $process_list = array();
+        $ret = $this->get_p_list_by_condition($condition,$process_list,$msg);
+        if($ret !== true){
+            $msg = set_err_msg('获取流程信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        $this->startTrans();
+        //step1 更新当前流程信息,并获取下一流程信息
+        $next_process =  array();
+        foreach ($process_list as $key => $value){
+            if($value['p_id'] == $process_id){
+                //更新当前已完成流程
+                $update_condition = array(
+                    'p_id' => $value['p_id']
+                );
+                $update_data = array(
+                    'p_finish_time' => time()
+                );
+                $ret = $this->update_process($update_condition,$update_data,$msg);
+                if($ret !== true){
+                    $this->rollback();
+                    return $ret;
+                }else{
+                    $next_process = $process_list[$key+1];
+                    //更新下一流程的开始时间
+                    $update_condition = array(
+                        'p_id' => $process_list[$key+1]['p_id']
+                    );
+                    $update_data = array(
+                        'p_start_time' => time()
+                    );
+                    $ret = $this->update_process($update_condition,$update_data,$msg);
+                    if($ret !== true){
+                        $this->rollback();
+                        return $ret;
+                    }
+                    break;
+                }
+            }
+        }
+        //step2 更新task表中的流程信息
+        $task_condition = array(
+            't_id' => $task_id
+        );
+        $task_update = array(
+            'p_id' => $next_process['p_id'],
+            'a_id' => $next_process['a_id'],
+            'a_name' => $next_process['a_name'],
+            't_stage_id' => $next_process['p_stage_id']
+        );
+        $task_model = D('Task');
+        $ret = $task_model->where($task_condition)->save($task_update);
+        if($ret === false){
+            $this->rollback();
+            $msg = set_err_msg('更新task表中的流程信息失败。',104);
+            $this->_log->write_array($this->getLastSql(),$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+            return 104;
+        }
+        //step3 向下一个流程执行人发送微信消息
+        $account_model = D('Account');
+        $account_info = array();
+        $account_model->get_account_info_by_id($next_process['a_id'],$account_info);//这里执行失败不需要返回错误
+        $openid = $account_info['a_wechat_open_id'];
+        $url = C('DOMAIN').'index.php?s=/Index/index/enter/account';
+        $ret = send_wechat_msg_template(2,$openid,'任务流转通知','有新的任务流转到您的名下，请点击查看',$url,'进行中');
+        if($ret['errcode'] !== 0){
+            $msg = '账户为：'.$next_process['a_name '].',微信消息推送失败。';
+            $this->_log->write_array($ret,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+        }
+
+        $this->commit();
+        return true;
+    }
+
+
+
+}

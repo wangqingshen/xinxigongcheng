@@ -1,0 +1,7 @@
+dasdasdas
+<script type="text/javascript" src="__ROOT__/application/Html/Dist/js/jquery.js" ></script>
+<script type="text/javascript">
+$(function(){
+ localStorage.clear();
+})
+</script>

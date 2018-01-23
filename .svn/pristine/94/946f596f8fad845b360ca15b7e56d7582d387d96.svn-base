@@ -1,0 +1,304 @@
+<?php
+namespace Api\Event;
+
+use Think\Log;
+
+class ConsultEvent
+{
+    private $_log;//日志对象
+    private $_consult_task_model;
+    private $_message_board_model;
+    private $_wechat_member_model;
+    private $_account_model;
+
+    private $_consult_status_arr;
+    private $_consult_type;
+    /*日志常量*/
+    const INFO = 'INFO';  // 流水日志
+    const ERR = 'ERR';  // 一般错误
+    const LOG_FILE = 5;
+    public function __construct()
+    {
+        $this->_log = new Log();
+        $this->_consult_task_model = D('ConsultTask');
+        $this->_message_board_model = D('MessageBoard');
+        $this->_wechat_member_model = D('WechatMember');
+        $this->_account_model = D('Account');
+
+        $this->_consult_status_arr = C('consult_status');
+        $this->_consult_type = C('expert_type');
+    }
+
+    /**
+     * 函数用途描述:获取咨询相关全局参数
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool
+     */
+    public function consult_global_params($data, &$result = null){
+        $result['consult_type'] = C('task_type');
+        return true;
+    }
+    /**
+     * 函数用途描述:创建咨询单
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function create_consult_task($data, &$result = null){
+        $params = array('member_id','consult_title','consult_content','consult_type');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $time = time();
+        $insert_data = array(
+            'ct_create_time' => $time,
+            'ct_update_time' => $time,
+            'member_id' => $data['member_id'],
+            'ct_title' => $data['consult_title'],
+            'ct_content' => $data['consult_content'],
+            'ct_type' => $data['consult_type'],
+            'ct_status' => 1,
+        );
+        $consult_id = '';
+        $ret = $this->_consult_task_model->create_consult($insert_data,$consult_id);
+        if($ret !== true){
+            return $ret;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:获取咨询列表
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function get_consult_list($data, &$result = null){
+        $params = array('user_id','user_type','page','page_size');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $condition = array();
+        if($data['user_type'] == 1){
+            $condition = array(
+                'member_id' => $data['user_id']
+            );
+        }elseif ($data['user_type'] == 2){
+            $condition = array(
+                'exper_id' => $data['user_id']
+            );
+        }
+
+        //获取咨询总数
+        $count = 0;
+        $ret = $this->_consult_task_model->count_consult($condition,$count);
+        if($ret !== true){
+            return $ret;
+        }
+        //计算偏移量
+        $page = $data['page'];
+        $page_size = $data['page_size'];
+        $offset = ($page-1)*$page_size;
+        //获取咨询列表
+        $consult_list = array();
+        $field = 'ct_id,ct_update_time,ct_title,ct_status';
+        $order = 'ct_create_time desc';
+        $ret = $this->_consult_task_model->get_consult_list($condition,$field,$order,$offset,$page,$consult_list);
+        if($ret !== true){
+            return $ret;
+        }
+        $result['count'] = $count;
+        $result['list'] = array();
+        foreach ($consult_list as $key => $value){
+            $result['list'][$key]['consult_id'] = $value['ct_id'];
+            $result['list'][$key]['new_reply_time'] = date("Y-m-d",$value['ct_update_time']);
+            $result['list'][$key]['consult_title'] = $value['ct_title'];
+            $result['list'][$key]['consult_status'] = $this->_consult_status_arr[$value['ct_status']];
+            //获取留言板最新回复消息
+            $message_info = array();
+            $message_condition = array(
+                'ct_id' => $value['ct_id']
+            );
+            $ret = $this->_message_board_model->get_last_reply($message_condition,$message_info);
+            if($ret !== true){
+                $result['list'][$key]['last_reply'] = '';
+            }
+            $result['list'][$key]['last_reply'] = $message_info['content'];
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:获取咨询内容
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function get_consult_info($data, &$result = null){
+        $params = array('consult_id');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $consult_info = array();
+        $ret = $this->_consult_task_model->get_consult_info_by_id($data['consult_id'],$consult_info);
+        if($ret !== true){
+            return $ret;
+        }
+        $result['consult_id'] = $consult_info['ct_id'];
+        $result['consult_title'] = $consult_info['ct_title'];
+        $result['consult_content'] = $consult_info['ct_content'];
+        $result['consult_type'] = $this->_consult_type[$consult_info['ct_type']];
+        return true;
+    }
+
+    /**
+     * 函数用途描述:咨询回复接口
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     */
+    public  function consult_reply($data, &$result = null){
+        $params = array('replyer_type','replyer_id','reply_content','consult_id');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $insert_data = array(
+            'ct_id' => $data['consult_id'],
+            'replyer_id' => $data['replyer_id'],
+            'content' => $data['reply_content'],
+            'reply_time' => time(),
+        );
+        $ret = $this->_message_board_model->create_reply_message($insert_data);
+        if($ret !== true){
+            return $ret;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:获取咨询列表
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     */
+    public function get_reply_list($data, &$result = null){
+        $params = array('consult_id','page','page_size');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $condition = array(
+            'ct_id' => $data['consult_id']
+        );
+        //计算偏移量
+        $page = $data['page'];
+        $page_size = $data['page_size'];
+        $offset = ($page-1)*$page_size;
+        //获取回复消息总数
+        $count = 0;
+        $ret = $this->_message_board_model->count_message($condition,$count);
+        if($ret !== true){
+            return $ret;
+        }
+        //获取回复消息列表
+        $field = '*';
+        $order = 'reply_time asc';
+        $message_list = array();
+        $ret = $this->_message_board_model->get_message_list($condition,$field,$order,$offset,$count,$message_list);
+        if($ret !== true){
+            return true;
+        }
+        $result['count'] = $count;
+        $member_info = array();
+        foreach ($message_list as $key => $value){
+            $result['list'][$key]['reply_time'] = date("Y-m-d H:i:s",$value['reply_time']);
+            $result['list'][$key]['reply_content'] = date("Y-m-d H:i:s",$value['content']);
+            //获取用户信息
+            if($value['replyer_type'] == 1){
+                $wechat_member_id = $value['replyer_id'];
+                $ret = $this->_wechat_member_model->get_wechat_member_info_by_id($wechat_member_id,$member_info);
+                if($ret !== true){
+                    $msg = '获取微信外部用户信息失败';
+                    $this->_log->write_array($value,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+                    continue;
+                }
+                $result['list'][$key]['nick_name'] = $member_info['wm_nick_name'];
+                $result['list'][$key]['head_img'] = $member_info['wm_head_img'];
+            }elseif ($value['replyer_type'] == 2){
+                $expert_id = $value['replyer_id'];
+                $ret = $this->_account_model->get_account_info_by_id($expert_id,$member_info);
+                if($ret !== true){
+                    $msg = '获取专家账户信息失败';
+                    $this->_log->write_array($value,$msg, self::ERR, __CLASS__.'\\'.__FUNCTION__.'\\'.__LINE__,self::LOG_FILE);
+                    continue;
+                }
+                $result['list'][$key]['nick_name'] = $member_info['a_nick_name'];
+                $result['list'][$key]['head_img'] = $member_info['a_head_img'];
+
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:分配专家
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function allocation_expert($data, &$result = null){
+        $params = array('consult_id','expert_id');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $condition = array(
+            'ct_id' => $data['consult_id']
+        );
+        $update_data = array(
+            'expert_id' => $data['expert_id']
+        );
+        $ret = $this->_consult_task_model->update_consult_task($condition,$update_data);
+        if($ret !== true){
+            return $ret;
+        }
+        return true;
+    }
+
+    /**
+     * 函数用途描述:结束咨询
+     * @author:risoli
+     * @param $data
+     * @param null $result
+     * @return bool|int
+     */
+    public function end_consult($data, &$result = null){
+        $params = array('consult_id');
+        $ret = check_must_params($data, $params);
+        if ($ret !== true) {
+            return $ret;
+        }
+        $condition = array(
+            'ct_id' => $data['consult_id']
+        );
+        $update_data = array(
+            'ct_status' => 3
+        );
+        $ret = $this->_consult_task_model->update_consult_task($condition,$update_data);
+        if($ret !== true){
+            return $ret;
+        }
+        return true;
+    }
+
+}

@@ -1,0 +1,34 @@
+    <footer class="aui-bar aui-bar-tab detail-footer" id="footer">
+        <div class="aui-bar-tab-item task-img-btn" tapmode>
+            <div class="aui-bar-tab-label">上传照片</div>
+        </div>
+        <div class="aui-bar-tab-item task-transfer-btn" tapmode>
+            <div class="aui-bar-tab-label">任务流转</div>
+        </div>
+        <div class="aui-bar-tab-item task-over-btn" tapmode>
+            <div class="aui-bar-tab-label">申请中止</div>
+        </div>
+        <div class="aui-bar-tab-item task-change-btn" tapmode>
+            <div class="aui-bar-tab-label">变更执行人</div>
+        </div>
+        <div class="aui-bar-tab-item task-review-btn" tapmode>
+            <div class="aui-bar-tab-label">提交审核</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-bar-tab-label">审核中</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-bar-tab-label">申请中止中</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-bar-tab-label">审核完成</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-bar-tab-label">同意中止</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-bar-tab-label">变更执行人中</div>
+        </div>
+    </footer>
+</body>
+</html>

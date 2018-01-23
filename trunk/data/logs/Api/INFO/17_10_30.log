@@ -1,0 +1,161 @@
+
+[2017-10-30 22:36:57]
+##line=114##data:{"header":{"timestamp":"171030103657","nonce":"30845","signature":"9131a08ab799ac7f770730d06da7bb03c63c841e"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:36:57]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:36:57]
+##line=114##data:{"header":{"timestamp":"171030103657","nonce":"71912","signature":"6976ec2ebcb97bd5e00252be89c4e47e73e5fe84"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:36:57]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:00]
+##line=114##data:{"header":{"timestamp":"171030103700","nonce":"79486","signature":"8e333c47243313009a42be3a19d2fcac6024f1e0"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":2,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:37:00]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[]}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:06]
+##line=114##data:{"header":{"timestamp":"171030103706","nonce":"95305","signature":"af0530848a9cb688d28c159cf05618db007601b5"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:37:06]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:06]
+##line=114##data:{"header":{"timestamp":"171030103706","nonce":"94121","signature":"489070a4d39e8d28418d68fca6df7bf4a0a0c8bb"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:37:06]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:16]
+##line=114##data:{"header":{"timestamp":"171030103716","nonce":"34819","signature":"6ae55e7ae6a1eda14da54d29a27dc849b2f0510c"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":2,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:37:16]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[]}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:16]
+##line=114##data:{"header":{"timestamp":"171030103716","nonce":"30274","signature":"0379c4c5741b33fe90db3a83c287f4f36e887fa4"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:37:16]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:16]
+##line=114##data:{"header":{"timestamp":"171030103716","nonce":"52671","signature":"99a092e0dc3c4fa08c65fbf25a68cc639405d3e0"},"cmd":{"name":"get_wechat_signature"},"data":{"nonce_str":"123456","timestamp":1509374236000,"url":"http:\/\/local.xxgc.com\/wap.php?s=\/newtask\/index"}}##errMsg:前端传入数据
+[2017-10-30 22:37:17]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"signature":"7acdecb74b8f9645dda55a81952d2814acc71271"}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:17]
+##line=114##data:{"header":{"timestamp":"171030103716","nonce":"00473","signature":"19fd414cd7189afcafe44215fac285e63760d053"},"cmd":{"name":"get_accounts"},"data":{"account_type":"1"}}##errMsg:前端传入数据
+[2017-10-30 22:37:17]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":[{"a_id":"15","a_name":"\u674e\u60f3"},{"a_id":"16","a_name":"\u738b\u5c0f\u5706"},{"a_id":"17","a_name":"\u674e\u60f3\u5c0f\u53f7"},{"a_id":"18","a_name":"\u97e9\u56fd"},{"a_id":"19","a_name":"\u4e8e\u59b9\u59b9"},{"a_id":"20","a_name":"\u7530\u8001\u5e08"}]}##errMsg:成功返回数据日志
+[2017-10-30 22:37:17]
+##line=114##data:{"header":{"timestamp":"171030103717","nonce":"46200","signature":"fddea07967cb08695468a144882c8b618a3e42f0"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:37:17]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:37:17]
+##line=114##data:{"header":{"timestamp":"171030103717","nonce":"51800","signature":"e02224279ed1b54b8ae06f7eab5ccd3c5556f275"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:37:17]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:38:22]
+##line=114##data:{"header":{"timestamp":"171030103821","nonce":"26055","signature":"cc34625fb004f2c2555d237fe541419ca3b9a674"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:38:22]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:38:22]
+##line=114##data:{"header":{"timestamp":"171030103821","nonce":"17145","signature":"b3fc2acc2fc3d2b93fd1234c4d37a5755d71b7d8"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:38:22]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:38:26]
+##line=114##data:{"header":{"timestamp":"171030103826","nonce":"41154","signature":"4ef27bd8e9da4eb739af928a73cc53221765e980"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:38:27]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:38:27]
+##line=114##data:{"header":{"timestamp":"171030103826","nonce":"36803","signature":"ba084af77cdd12e002922ec8bea521305ce79d94"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:38:27]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:39:06]
+##line=114##data:{"header":{"timestamp":"171030103906","nonce":"05811","signature":"444367d938e74750848e5773cac86815860d29aa"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:39:06]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:39:06]
+##line=114##data:{"header":{"timestamp":"171030103906","nonce":"04845","signature":"58b05af2d2baad5ff87606fa14d8d5183ceb0819"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:39:06]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:39:42]
+##line=114##data:{"header":{"timestamp":"171030103942","nonce":"49179","signature":"0f3618fd5ecf1d27b5e97d83de9a65312c4f8cb2"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:39:42]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:39:42]
+##line=114##data:{"header":{"timestamp":"171030103942","nonce":"22714","signature":"70938ff8ceecc56d27815b428e871655921a38f8"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:39:42]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:39:56]
+##line=114##data:{"header":{"timestamp":"171030103956","nonce":"61233","signature":"b9a19f2c3b24963da337d5b3b4d96056f4fd641c"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:39:56]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:39:56]
+##line=114##data:{"header":{"timestamp":"171030103956","nonce":"98440","signature":"7c9bd5a1ff06d7f2433f6760febe0e61cb87fc66"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:39:56]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:19]
+##line=114##data:{"header":{"timestamp":"171030104119","nonce":"62331","signature":"1ce626ec99886b83246d849421e5c0a027980483"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":2,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:41:19]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[]}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:27]
+##line=114##data:{"header":{"timestamp":"171030104126","nonce":"87582","signature":"c156032450e22db50c0fc1b9932be74c26de2def"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:41:27]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:27]
+##line=114##data:{"header":{"timestamp":"171030104126","nonce":"26127","signature":"ce1c878b154cf3c522317751fbdaebb9584e3b88"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:41:27]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:28]
+##line=114##data:{"header":{"timestamp":"171030104128","nonce":"30321","signature":"2b3cdbce1657eaa03a6b007506ad118fb6e90aa5"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":2,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:41:28]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[]}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:32]
+##line=114##data:{"header":{"timestamp":"171030104132","nonce":"11113","signature":"c480d005e144f5dd0386ead8820fedf6b42ea44e"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:41:32]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:32]
+##line=114##data:{"header":{"timestamp":"171030104132","nonce":"25621","signature":"0544006e36162a5896a772adccc42c34fbcbf5b2"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:41:33]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:45]
+##line=114##data:{"header":{"timestamp":"171030104144","nonce":"66138","signature":"9f0ed321affd9054a0be661d70531bef7b1b365d"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":2,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:41:45]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[]}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:45]
+##line=114##data:{"header":{"timestamp":"171030104145","nonce":"91958","signature":"6b36ade6beca69e5fc493c7cbaba0bf139773df8"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:41:45]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:45]
+##line=114##data:{"header":{"timestamp":"171030104145","nonce":"97876","signature":"f4bdec047805cfcdb643af94c5adaaae35dbbd61"},"cmd":{"name":"get_wechat_signature"},"data":{"nonce_str":"123456","timestamp":1509374505000,"url":"http:\/\/local.xxgc.com\/wap.php?s=\/newtask\/index"}}##errMsg:前端传入数据
+[2017-10-30 22:41:46]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"signature":"eb2bbaeacdb51ba9b37b430eceaa554ff520d428"}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:46]
+##line=114##data:{"header":{"timestamp":"171030104145","nonce":"43116","signature":"51f68ffea9e732ee86850cc52ed5398e09a5eeba"},"cmd":{"name":"get_accounts"},"data":{"account_type":"1"}}##errMsg:前端传入数据
+[2017-10-30 22:41:46]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":[{"a_id":"15","a_name":"\u674e\u60f3"},{"a_id":"16","a_name":"\u738b\u5c0f\u5706"},{"a_id":"17","a_name":"\u674e\u60f3\u5c0f\u53f7"},{"a_id":"18","a_name":"\u97e9\u56fd"},{"a_id":"19","a_name":"\u4e8e\u59b9\u59b9"},{"a_id":"20","a_name":"\u7530\u8001\u5e08"}]}##errMsg:成功返回数据日志
+[2017-10-30 22:41:47]
+##line=114##data:{"header":{"timestamp":"171030104147","nonce":"65834","signature":"1276809b2d5d381a1f8e2b8afb28bd9b6b530f54"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:41:47]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:41:47]
+##line=114##data:{"header":{"timestamp":"171030104147","nonce":"33709","signature":"79e6354ef5d4f15f9a70c4d91683037297741716"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:41:47]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:42:09]
+##line=114##data:{"header":{"timestamp":"171030104209","nonce":"67771","signature":"bc7acd13780210770f3b60f51aabdba0c4e35128"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":2,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:42:09]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[]}}##errMsg:成功返回数据日志
+[2017-10-30 22:42:12]
+##line=114##data:{"header":{"timestamp":"171030104212","nonce":"07021","signature":"8e1d15024e89f69c1a3007edc3949b44f10e739a"},"cmd":{"name":"task_global_params"},"data":""}##errMsg:前端传入数据
+[2017-10-30 22:42:12]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"task_type":{"1":"\u4eba\u8eab\u4f24\u5bb3","2":"\u6c11\u4e8b\u7ea0\u7eb7","3":"\u4fb5\u5bb3\u6743\u76ca","4":"\u9884\u9632\u6559\u80b2","5":"\u5fc3\u7406\u5e72\u9884","6":"\u8bc9\u6c42\u670d\u52a1","7":"\u5176\u5b83\u4e8b\u4ef6"},"stage":{"1":"\u8bc9\u6c42\u767b\u8bb0","2":"\u5feb\u901f\u5bf9\u63a5","3":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","4":"\u5b9e\u5730\u52d8\u5bdf","5":"\u53cd\u9988\u8fdb\u5c55","6":"\u8ddf\u8fdb\u7ed3\u6848","7":"\u53cd\u9988\u8bc4\u4f30"},"account_type":{"1":"\u5e02\u7ea7\u8d26\u6237","2":"\u533a\u53bf\u8d26\u6237","3":"\u76f8\u5173\u8d26\u6237"}}}##errMsg:成功返回数据日志
+[2017-10-30 22:42:12]
+##line=114##data:{"header":{"timestamp":"171030104212","nonce":"34544","signature":"a4365a12bc41a6b781b652445600afee127d0adb"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":1,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:42:12]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[{"t_id":"97","t_title":"\u6d4b\u8bd5\u4efb\u52a1","create_time":"2017-10-29","t_stage_id":"1","stage_name":"\u8bc9\u6c42\u767b\u8bb0"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:43:08]
+##line=114##data:{"header":{"timestamp":"171030104308","nonce":"93654","signature":"fa03cefe4c3eb0b83b5956ec6a88471d1a0d907a"},"cmd":{"name":"a_task_list"},"data":{"type":4,"page":2,"page_size":10}}##errMsg:前端传入数据
+[2017-10-30 22:43:08]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"count":"1","list":[]}}##errMsg:成功返回数据日志
+[2017-10-30 22:43:08]
+##line=114##data:{"header":{"timestamp":"171030104308","nonce":"86993","signature":"8c72ee8a5a888a988bee9170e414bfa8a503f03a"},"cmd":{"name":"get_task_examine_info"},"data":{"task_id":"97"}}##errMsg:前端传入数据
+[2017-10-30 22:43:08]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"title":"\u6d4b\u8bd5\u4efb\u52a1","content":"\u5927\u591a\u6492\u6eda\u6eda\u6eda","status":"1","process":[{"stage_name":"\u8bc9\u6c42\u767b\u8bb0","account_name":"\u674e\u60f3","mobile":"18628062001"},{"stage_name":"\u5feb\u901f\u5bf9\u63a5","account_name":"\u674e\u60f3\u5c0f\u53f7","mobile":"18111247718"},{"stage_name":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","account_name":"\u97e9\u56fd","mobile":"01072041489"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:43:11]
+##line=114##data:{"header":{"timestamp":"171030104311","nonce":"04149","signature":"20b6a82f8315c883cfa578d66c604419b9996f23"},"cmd":{"name":"get_task_examine_info"},"data":{"task_id":"97"}}##errMsg:前端传入数据
+[2017-10-30 22:43:11]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"title":"\u6d4b\u8bd5\u4efb\u52a1","content":"\u5927\u591a\u6492\u6eda\u6eda\u6eda","status":"1","process":[{"stage_name":"\u8bc9\u6c42\u767b\u8bb0","account_name":"\u674e\u60f3","mobile":"18628062001"},{"stage_name":"\u5feb\u901f\u5bf9\u63a5","account_name":"\u674e\u60f3\u5c0f\u53f7","mobile":"18111247718"},{"stage_name":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","account_name":"\u97e9\u56fd","mobile":"01072041489"}]}}##errMsg:成功返回数据日志
+[2017-10-30 22:43:13]
+##line=114##data:{"header":{"timestamp":"171030104313","nonce":"60369","signature":"652e97c4aa2405646ca455ea5b45e78d44eb70a9"},"cmd":{"name":"get_task_examine_info"},"data":{"task_id":"97"}}##errMsg:前端传入数据
+[2017-10-30 22:43:13]
+##line=65##data:{"errcode":1,"errmsg":"succ","data":{"title":"\u6d4b\u8bd5\u4efb\u52a1","content":"\u5927\u591a\u6492\u6eda\u6eda\u6eda","status":"1","process":[{"stage_name":"\u8bc9\u6c42\u767b\u8bb0","account_name":"\u674e\u60f3","mobile":"18628062001"},{"stage_name":"\u5feb\u901f\u5bf9\u63a5","account_name":"\u674e\u60f3\u5c0f\u53f7","mobile":"18111247718"},{"stage_name":"\u521d\u671f\u5e72\u9884\u8ba1\u5212","account_name":"\u97e9\u56fd","mobile":"01072041489"}]}}##errMsg:成功返回数据日志

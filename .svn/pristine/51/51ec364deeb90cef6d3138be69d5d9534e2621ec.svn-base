@@ -1,0 +1,126 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U($account_fun)}">账户列表</a></li>
+			<li class="active"><a href="{:U('Account/add_account',array('account_type'=>$account_type))}">{$add_account_cn}</a></li>
+		</ul>
+		<form id="account_form" method="post" class="form-horizontal js-ajax-form" action="{:U('Account/add_account_post')}">
+			<input type="hidden" value="{$account_type}" id="account_type" name="account_type" />
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">真实姓名：</label>
+					<div class="controls">
+						<input type="text" name="real_name" id="real_name" value="">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">手机号：</label>
+					<div class="controls">
+						<input type="text" name="mobile" id="mobile" value="">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">性别：</label>
+					<div class="controls">
+						<select name="select_sex" id="select_sex">
+							<option value="">请选择</option>
+							<option value="1">男</option>
+							<option value="2">女</option>
+						</select>
+					</div>
+				</div>
+				<!--若账号类型是专家，则显示专家类型-->
+				<if condition="$account_type eq 4">
+					<div class="control-group">
+						<label class="control-label">专家类型：</label>
+						<div class="controls">
+							<select name="select_expert" id="select_expert">
+								<option value="">请选择</option>
+								<volist name="expert_type" id="expert" key="key">
+									<option value="{$key}">{$expert}</option>
+								</volist>
+							</select>
+						</div>
+					</div>
+				<else />
+					<div class="control-group">
+						<label class="control-label">部门：</label>
+						<div class="controls">
+							<select name="select_dep" id="select_dep">
+								<option value="">请选择</option>
+								<volist name="departments" id="dep" key="key">
+									<option value="{$key}">{$dep}</option>
+								</volist>
+							</select>
+						</div>
+					</div>
+				</if>
+
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+				<a class="btn" href="javascript:history.back(-1);">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+<script src="__PUBLIC__/js/validate.js"></script>
+<script>
+	$(function () {
+        $.validator.addMethod('account_type_expert',function (value,element) {
+            if($('#account_type').val() == 4 && value !== ''){
+                return true;
+            }
+			return false;
+        },"<span style='color: red'>请选择专家类型</span>");
+        $.validator.addMethod('account_type_dep',function (value,element) {
+            if($('#account_type').val() !== 4 && value !== ''){
+                return true;
+            }
+            return false;
+        },"<span style='color: red'>请选择部门类型</span>");
+
+		$('#account_form').validate({
+			rules:{
+				real_name:{
+				    required:true,
+					maxlength:20
+				},
+				mobile:{
+				    required:true,
+					maxlength:11,
+					minlength:11,
+					number:true
+				},
+				select_sex:{
+				    required:true
+				},
+				select_dep:{
+                    account_type_dep:true
+				},
+                select_expert:{
+                    account_type_expert:true
+				}
+			},
+			messages:{
+			    real_name:{
+			        required:"<span style='color: red'>真实姓名不能为空</span>",
+					maxlength:"<span style='color: red'>真实姓名不能超过10个汉字</span>"
+				},
+				mobile:{
+			        required:"<span style='color: red'>手机号不能为空</span>",
+                    maxlength:"<span style='color: red'>手机号为11位</span>",
+                    minlength:"<span style='color: red'>手机号为11位</span>",
+					number:"<span style='color: red'>只能输入正确的手机号</span>"
+				},
+				select_sex:{
+			        required:"<span style='color: red'>请选择性别</span>"
+				}
+			}
+		});
+    })
+
+</script>
